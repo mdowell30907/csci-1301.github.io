@@ -96,17 +96,9 @@
 <li><a href="#writing-and-compiling-programs">Writing and Compiling Programs</a></li>
 <li><a href="#computer-usage">Computer Usage</a></li>
 </ul></li>
-<li><a href="#hello-world">Hello World</a>
+<li><a href="#first-program">First Program</a>
 <ul>
-<li><a href="#my-first-subtitle">My First Subtitle!</a></li>
-<li><a href="#my-second-subtitle">My Second Subtitle</a>
-<ul>
-<li><a href="#block-quote-examples">Block quote examples</a></li>
-<li><a href="#inline-code-block">Inline Code block</a></li>
-</ul></li>
-<li><a href="#image">Image</a></li>
-<li><a href="#label-test">Label test</a></li>
-<li><a href="#link-test">Link test</a></li>
+<li><a href="#rules-and-conventions">Rules and Conventions</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -163,12 +155,10 @@
 </ul>
 </section>
 </section>
-<section id="hello-world" class="level1">
-<h1>Hello World</h1>
-<p>Setting up things. This is a sample document.</p>
-<section id="my-first-subtitle" class="level2">
-<h2>My First Subtitle!</h2>
-<p>Included code block</p>
+<section id="first-program" class="level1">
+<h1>First Program</h1>
+<p><em>The students should understand all the components of a simple “Hello World” program:</em></p>
+<!-- all code blocks need titles -->
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program <span class="op">{</span></span>
@@ -176,69 +166,25 @@
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-</section>
-<section id="my-second-subtitle" class="level2">
-<h2>My Second Subtitle</h2>
-<table>
-<thead>
-<tr class="header">
-<th>#</th>
-<th style="text-align: left;">Header</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td style="text-align: left;">Table row 1</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td style="text-align: left;">Table row 2</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td style="text-align: left;">Table row 3</td>
-</tr>
-</tbody>
-</table>
-<section id="block-quote-examples" class="level3">
-<h3>Block quote examples</h3>
-<p>Short</p>
-<blockquote>
-<p>If you automate a mess, you get an automated mess.</p>
-</blockquote>
-<p>Longer</p>
-<blockquote>
-<p>Programming without an overall architecture or design in mind is like exploring a cave with only a flashlight: You don’t know where you’ve been, you don’t know where you’re going, and you don’t know quite where you are.</p>
-</blockquote>
-</section>
-<section id="inline-code-block" class="level3">
-<h3>Inline Code block</h3>
-<p>Some inline <code class="sourceCode cs"><span class="dt">int</span> x</code> expressions <code class="sourceCode cs">x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Program <span class="op">{</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-</section>
-</section>
-<section id="image" class="level2">
-<h2>Image</h2>
-<figure>
-<img src="data:image/jpeg;base64,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" alt="“my first image”" /><figcaption aria-hidden="true">“my first image”</figcaption>
-</figure>
-</section>
-<section id="label-test" class="level2">
-<h2>Label test</h2>
-<p><span class="emoji" data-emoji="lock">🔒</span> always use strong passwords and enable 2FA</p>
-</section>
-<section id="link-test" class="level2">
-<h2>Link test</h2>
-<p><a href="#my-first-subtitle">Relative Link within same document</a></p>
-<p><a href="https://augusta.edu">Absolute Link</a></p>
-<p><a href="#general-concepts">Cross lecture link</a></p>
+<ul>
+<li>Comments (in line and block)</li>
+<li><code class="sourceCode cs"><span class="kw">using</span></code> statements and namespace / API concepts</li>
+<li>blank lines and spacing</li>
+<li>indentation</li>
+<li>intro to classes and methods’ structures (body / header)</li>
+<li>status of <code class="sourceCode cs">main</code> method</li>
+<li>intro to Console’s <code class="sourceCode cs">Write</code> and <code class="sourceCode cs">WriteLine</code></li>
+<li>string literal</li>
+</ul>
+<section id="rules-and-conventions" class="level3">
+<h3>Rules and Conventions</h3>
+<ul>
+<li>The difference between a “rule” (e.g. case-sensitivity) and a “convention” (commenting your code).</li>
+<li>Reserved words</li>
+<li>Identifiers and naming conventions</li>
+<li>That the distinction can vary with the programming language</li>
+<li>Importance and role of <code class="sourceCode cs"><span class="op">{</span></code> and <code class="sourceCode cs"><span class="op">}</span></code></li>
+</ul>
 </section>
 </section>
 </main>

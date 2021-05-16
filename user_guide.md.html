@@ -190,38 +190,44 @@
 </section>
 <section id="editing-resources" class="level1">
 <h1>Editing Resources</h1>
-<p>If you are new to this project and looking to contribute, first see <a href="/contributing">Contributing Guidelines</a> to learn about the different ways to contribute and how to gain access.</p>
+<p>If you are new to this project, first see <a href="/contributing">Contributing Guidelines</a> to learn about the different ways you can contribute and how to join contributing teams.</p>
 <section id="best-practices-for-all-forms-of-content" class="level2">
 <h2>Best practices for all forms of content</h2>
 <ul>
-<li><strong>Structure for accesibility</strong>
+<li><p><strong>Structure for accesibility</strong></p>
 <ul>
-<li>All resources are titled
-<ul>
-<li>TODO: explain how</li>
-</ul></li>
-<li>All resources are <a href="#content-labelling">labelled</a> when applicable
+<li>All resources are titled TODO: explain how</li>
+<li>All resources are labelled when applicable
 <ul>
 <li>at minimum list prerequisites and security-related aspects</li>
+<li>see <a href="#content-labelling">Content Labelling</a> for more details</li>
 </ul></li>
 </ul></li>
-<li><strong>Images</strong>
+<li><p><strong>Images</strong></p>
 <ul>
 <li>Images require a descriptive alt tag for accessibility</li>
 <li>Store images in the repository in <code class="sourceCode cs">img</code> directory because pandoc will look for images there</li>
 <li>When refering to images in markdown, use path from root even if the image may appear broken locally</li>
-</ul></li>
-<li><strong>Source code</strong>
+</ul>
+<p><strong>Syntax example.</strong> The quoted text is the alt tag and in parentheses is path to file</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">![</span><span class="st">&quot;image of visual studio IDE&quot;</span><span class="op">](./</span>img<span class="op">/</span>image<span class="op">.</span><span class="fu">jpg</span><span class="op">)</span></span></code></pre></div></li>
+<li><p><strong>Source code</strong></p>
 <ul>
-<li>source code programs belong in <code class="sourceCode cs">code</code> directory
+<li><p>source code programs belong <em>primarily</em> in <code class="sourceCode cs">code</code> directory</p>
 <ul>
 <li>the code included in this directory should be a complete program</li>
 <li>the program should compile and terminate</li>
-<li>we can automatically check these code snippets for syntactical correctness if these expectations are followed</li>
-<li>such program can be included in lecture notes of labs by using pandoc-include filter</li>
+<li>source code that is faulty, partial or does not terminate can be included in markdown as inline code block</li>
+<li>we can automatically check these code snippets for syntactical correctness if these guidelines are followed</li>
 </ul></li>
-<li>source code that is faulty, partial or does not terminate can be included in markdown as an inline code block</li>
-<li>only include code in text form such that it can be copy-pasted for reuse</li>
+<li><p>code snippet can be included in markdown documents using pandoc-include filter:</p>
+<pre>
+  ```
+  !include code/sample.cs
+  ```</pre></li>
+<li><p>code blocks are by default annotated as <code class="sourceCode cs">csharp</code> unless stated otherwise</p></li>
+<li><p>syntax highlighting is applied automatically at build time</p></li>
+<li><p>only include code in text form such that it can be copy-pasted for reuse</p></li>
 </ul></li>
 </ul>
 </section>
@@ -361,9 +367,9 @@
 <section id="running-the-build" class="level3">
 <h3>Running the build</h3>
 <p>After installing all dependencies, from the repository root, run:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> all</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> all</span></code></pre></div>
 <p>To see a list of other alternative build options run</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>make help</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>make help</span></code></pre></div>
 </section>
 </section>
 </section>
