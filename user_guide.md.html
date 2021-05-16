@@ -239,10 +239,21 @@
 </section>
 <section id="creating-new-labs" class="level2">
 <h2>Creating new labs</h2>
-<ul class="task-list">
-<li><input type="checkbox" disabled></input>
-TODO</li>
-</ul>
+<ol type="1">
+<li><p>Choose a short and unique name that describes the lab</p></li>
+<li><p>Create a directory matching that name (use PascalCase since this is C#)</p></li>
+<li><p>Under the lab directory create:</p>
+<ol type="1">
+<li><code class="sourceCode cs">readme<span class="op">.</span><span class="fu">md</span></code> (case sensitive) - write lab instructions in this file. You should include meta fields, at minimum a title</li>
+<li>(optional) if you want to include starter code with the lab create a subdirectory called <code class="sourceCode cs">src</code> and add all source code files under this directory. Only include program files (not solution or project).</li>
+</ol></li>
+</ol>
+<p>If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:</p>
+<ol type="1">
+<li>readme will be converted to index (html, pdf, odt)</li>
+<li>contents of <code class="sourceCode cs">src</code> will be converted to a standalone C# solution as a zip file. This solution will have the same name as the lab directory which is why directory names should use PascalCase.</li>
+<li>all matching the described format will be included in <code class="sourceCode cs">labs<span class="op">.</span><span class="fu">zip</span></code> which you can find on the website or under releases</li>
+</ol>
 </section>
 </section>
 <section id="content-labelling" class="level1">
@@ -361,6 +372,7 @@ TODO</li>
     <div class="links">
         <a href="/">Home</a>
         <a href="/book">Book</a>
+        <a href="/labs">Labs</a>
         <a href="/about">About</a>
         <a href="https://github.com/csci-1301/csci-1301.github.io">Source Code</a>
     </div> 
