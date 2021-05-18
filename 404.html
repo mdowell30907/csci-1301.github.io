@@ -24,14 +24,20 @@
 <p>The page you are looking does not exist.</p>
 <p><a href="/">Go Home</a></p>
 </main>
+
 <footer>
     <div class="links">
-        <a href="/">Home</a>
-        <a href="/book">Book</a>
-        <a href="/labs">Labs</a>
-        <a href="/about">About</a>
-        <a href="https://github.com/csci-1301/csci-1301.github.io">Source Code</a>
-    </div> 
+                            <a href="https://github.com/csci-1301/csci-1301.github.io" title="Access the source code of this website.">Source Code</a>
+                <a href="/about" title="Learn more about this website.">About</a>
+        </div> 
 </footer>
+
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
 </body>
 </html>
