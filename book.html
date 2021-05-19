@@ -105,7 +105,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 19, 2021 (06:42:41 AM)</p>
+<p class="date">May 19, 2021 (07:07:49 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -392,7 +392,35 @@
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hello, world!&quot;</span><span class="op">);</span> <span class="co">// I&#39;m an in-line comment.</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Features of this program: - A multi-line comment: everything between the <code class="sourceCode cs"><span class="co">/*</span></code> and <code class="sourceCode cs"><span class="co">/*</span></code> is considered a <em>comment</em>, i.e. text for humans to read. It will be ignored by the C# compiler and has no effect on the program. - A <code class="sourceCode cs"><span class="kw">using</span></code> statement: This imports code definitions from the System <em>namespace</em>, which is part of the .NET Framework (the standard library). - In C#, code is organized into <strong>namespaces</strong>, which group related classes together - If you want to use code from a different namespace, you need a <code class="sourceCode cs"><span class="kw">using</span></code> statement to “import” that namespace - All the standard library code is in different namespaces from the code you will be writing, so you’ll need <code class="sourceCode cs"><span class="kw">using</span></code> statements to access it - A class declaration - Syntax: <code class="sourceCode cs"><span class="kw">class</span> <span class="op">[</span>name of <span class="kw">class</span><span class="op">]</span></code>, then <code class="sourceCode cs"><span class="op">{</span></code> to begin the body of the class, then <code class="sourceCode cs"><span class="op">}</span></code> to end the body of the class - All code between opening <code class="sourceCode cs"><span class="op">{</span></code> and closing <code class="sourceCode cs"><span class="op">}</span></code> is part of the class named by the <code class="sourceCode cs"><span class="kw">class</span> <span class="op">[</span>name<span class="op">]</span></code> statement - A method declaration - The name of the method is <code class="sourceCode cs">Main</code>, and is followed by empty parentheses (we’ll get to those later, but they’re required) - Just like with the class declaration, after the name, <code class="sourceCode cs"><span class="op">{</span></code> begins the body of the method, <code class="sourceCode cs"><span class="op">}</span></code> ends it - A statement inside the body of the method - This is the part of the program that actually “does something”: It prints a line of text to the console - A statement <em>must</em> end in a semicolon (the class header and method header aren’t statements) - This statement contains a class name (<code class="sourceCode cs">Console</code>), followed by a method name (<code class="sourceCode cs">WriteLine</code>). It calls the <code class="sourceCode cs">WriteLine</code> method in the <code class="sourceCode cs">Console</code> class. - The <strong>argument</strong> to the <code class="sourceCode cs">WriteLine</code> method is the text “Hello, world!”, which is in parentheses after the name of the method. This is the text that gets printed in the console: The <code class="sourceCode cs">WriteLine</code> method (which is in the standard library) takes an argument and prints it to the console. - Note that the argument to <code class="sourceCode cs">WriteLine</code> is inside double-quotes. This means it is a <strong>string</strong>, i.e. textual data, not a piece of C# code. The quotes are required in order to distinguish between text and code. - An in-line comment: All the text from the <code class="sourceCode cs"><span class="co">//</span></code> to the end of the line is considered a comment, and is ignored by teh C# compiler.</p>
+<p>Features of this program:</p>
+<ul>
+<li>A multi-line comment: everything between the <code class="sourceCode cs"><span class="co">/*</span></code> and <code class="sourceCode cs"><span class="co">/*</span></code> is considered a <em>comment</em>, i.e. text for humans to read. It will be ignored by the C# compiler and has no effect on the program.</li>
+<li>A <code class="sourceCode cs"><span class="kw">using</span></code> statement: This imports code definitions from the System <em>namespace</em>, which is part of the .NET Framework (the standard library).
+<ul>
+<li>In C#, code is organized into <strong>namespaces</strong>, which group related classes together</li>
+<li>If you want to use code from a different namespace, you need a <code class="sourceCode cs"><span class="kw">using</span></code> statement to “import” that namespace</li>
+<li>All the standard library code is in different namespaces from the code you will be writing, so you’ll need <code class="sourceCode cs"><span class="kw">using</span></code> statements to access it</li>
+</ul></li>
+<li>A class declaration
+<ul>
+<li>Syntax: <code class="sourceCode cs"><span class="kw">class</span> <span class="op">[</span>name of <span class="kw">class</span><span class="op">]</span></code>, then <code class="sourceCode cs"><span class="op">{</span></code> to begin the body of the class, then <code class="sourceCode cs"><span class="op">}</span></code> to end the body of the class</li>
+<li>All code between opening <code class="sourceCode cs"><span class="op">{</span></code> and closing <code class="sourceCode cs"><span class="op">}</span></code> is part of the class named by the <code class="sourceCode cs"><span class="kw">class</span> <span class="op">[</span>name<span class="op">]</span></code> statement</li>
+</ul></li>
+<li>A method declaration
+<ul>
+<li>The name of the method is <code class="sourceCode cs">Main</code>, and is followed by empty parentheses (we’ll get to those later, but they’re required)</li>
+<li>Just like with the class declaration, after the name, <code class="sourceCode cs"><span class="op">{</span></code> begins the body of the method, <code class="sourceCode cs"><span class="op">}</span></code> ends it</li>
+</ul></li>
+<li>A statement inside the body of the method
+<ul>
+<li>This is the part of the program that actually “does something”: It prints a line of text to the console</li>
+<li>A statement <em>must</em> end in a semicolon (the class header and method header aren’t statements)</li>
+<li>This statement contains a class name (<code class="sourceCode cs">Console</code>), followed by a method name (<code class="sourceCode cs">WriteLine</code>). It calls the <code class="sourceCode cs">WriteLine</code> method in the <code class="sourceCode cs">Console</code> class.</li>
+<li>The <strong>argument</strong> to the <code class="sourceCode cs">WriteLine</code> method is the text “Hello, world!”, which is in parentheses after the name of the method. This is the text that gets printed in the console: The <code class="sourceCode cs">WriteLine</code> method (which is in the standard library) takes an argument and prints it to the console.</li>
+<li>Note that the argument to <code class="sourceCode cs">WriteLine</code> is inside double-quotes. This means it is a <strong>string</strong>, i.e. textual data, not a piece of C# code. The quotes are required in order to distinguish between text and code.</li>
+</ul></li>
+<li>An in-line comment: All the text from the <code class="sourceCode cs"><span class="co">//</span></code> to the end of the line is considered a comment, and is ignored by teh C# compiler.</li>
+</ul>
 <section id="rules-of-c-syntax" class="level2">
 <h2>Rules of C# Syntax</h2>
 <ul>
