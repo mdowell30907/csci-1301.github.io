@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="robots" content="index, follow, noarchive" />
@@ -17,7 +17,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://csci-1301.github.io/" />
   <meta property="og:image" content="https://csci-1301.github.io/android-chrome-512x512.png" />
-  <title>Not Found</title>
+  <meta name="author" content="https://csci-1301.github.io/about#authors" />
+  <meta name="keywords" content="Computer Science, Problem solving methods, Augusta University, Bachelor of Science, C# Programming language" />
+  <title>Datatypes in C#</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -25,17 +27,423 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="data:text/css,%20%3Aroot%7B%0A%2D%2Dcolor%2Dtext%3A%23444%3B%0A%2D%2Dcolor%2Dlink%3A%20%233D5AFE%3B%0A%2D%2Dcolor%2Dlink%2Dvisited%3A%20%233D5AFE%3B%0A%2D%2Dcolor%2Dlink%2Dhover%3A%20%2306e%3B%0A%2D%2Dcolor%2Dlink%2Dactive%3A%20%23faa700%3B%0A%2D%2Dcolor%2Dselected%2Dtext%3A%20%23000%3B%0A%2D%2Dcolor%2Dselected%2Dlink%3A%20%230645ad%3B%0A%2D%2Dcolor%2Dtitle%3A%20%23111%3B%0A%2D%2Dcolor%2Dquote%3A%20%23666%3B%0A%2D%2Dcolor%2Dcode%3A%20%23000%3B%0A%2D%2Dcolor%2Dinline%2Dcode%3A%20%23000%3B%0A%2D%2Dbg%2Dcode%3A%20rgb%28246%2C%20248%2C%20250%29%3B%0A%2D%2Dbg%2Dinline%2Dcode%3A%20rgba%2827%2C%2031%2C%2035%2C%200%2E05%29%3B%0A%2D%2Dbg%2Dbody%3A%20%23fefefe%3B%0A%2D%2Dbg%2Dtable%2Dheader%3A%20%23eee%3B%0A%2D%2Dbg%2Dselection%3A%20rgba%28255%2C%20255%2C%200%2C%200%2E4%29%3B%0A%2D%2Dbg%2Dins%3A%20%23ff9%3B%0A%2D%2Dbg%2Dmark%3A%20%23ff0%3B%0A%2D%2Dborder%2Dtable%3A%20%23ddd%3B%0A%2D%2Dborder%2Dhr%2D1%3A%20%23aaa%3B%0A%2D%2Dborder%2Dhr%2D2%3A%20%23eee%3B%0A%2D%2Dborder%2Dquote%3A%20%23EEE%3B%0A%7D%0A%40media%20%28prefers%2Dcolor%2Dscheme%3A%20dark%29%20%7B%0A%3Aroot%20%7B%0A%2D%2Dcolor%2Dtext%3A%23e0e0e0%3B%0A%2D%2Dcolor%2Dlink%3A%20%2303A9F4%3B%0A%2D%2Dcolor%2Dlink%2Dvisited%3A%20%2303A9F4%3B%0A%2D%2Dcolor%2Dlink%2Dhover%3A%20%23FDD835%3B%0A%2D%2Dcolor%2Dlink%2Dactive%3A%20%23FBC02D%3B%0A%2D%2Dcolor%2Dselected%2Dtext%3A%20%23333%3B%0A%2D%2Dcolor%2Dselected%2Dlink%3A%20%230645ad%3B%0A%2D%2Dcolor%2Dtitle%3A%20%23fff%3B%0A%2D%2Dcolor%2Dquote%3A%20%23ddd%3B%0A%2D%2Dcolor%2Dcode%3A%20%23000%3B%0A%2D%2Dcolor%2Dinline%2Dcode%3A%20%23F9A825%3B%0A%2D%2Dbg%2Dcode%3A%20%23eee%3B%0A%2D%2Dbg%2Dinline%2Dcode%3A%20%23263238CC%3B%0A%2D%2Dbg%2Dbody%3A%20%23232323%3B%0A%2D%2Dbg%2Dtable%2Dheader%3A%20%2351515c99%3B%0A%2D%2Dbg%2Dselection%3A%20%23FFEE58DD%3B%0A%2D%2Dbg%2Dins%3A%20%23ff9%3B%0A%2D%2Dbg%2Dmark%3A%20%23ff0%3B%0A%2D%2Dborder%2Dtable%3A%20%23555%3B%0A%2D%2Dborder%2Dhr%2D1%3A%20%23555%3B%0A%2D%2Dborder%2Dhr%2D2%3A%20%23888%3B%0A%2D%2Dborder%2Dquote%3A%20%23999%3B%0A%7D%0A%7D%0Ahtml%20%7B%0Afont%2Dsize%3A%20100%25%3B%0Aoverflow%2Dy%3A%20scroll%3B%0A%2Dwebkit%2Dtext%2Dsize%2Dadjust%3A%20100%25%3B%0A%2Dms%2Dtext%2Dsize%2Dadjust%3A%20100%25%3B%0A%7D%0Abody%20%7B%0Acolor%3A%20var%28%2D%2Dcolor%2Dtext%29%3B%0Afont%2Dfamily%3A%20Georgia%2C%20Palatino%2C%20%27Palatino%20Linotype%27%2C%20Times%2C%20%27Times%20New%20Roman%27%2C%20serif%3B%0Afont%2Dsize%3A%201em%3B%0Aline%2Dheight%3A%201%2E7%3B%0Apadding%3A%201em%3B%0Amargin%3A%20auto%3B%0Amax%2Dwidth%3A%2042em%3B%0Abackground%3A%20var%28%2D%2Dbg%2Dbody%29%3B%0Atext%2Dalign%3A%20justify%3B%0Atext%2Djustify%3A%20inter%2Dword%3B%0A%7D%0Apre%2C%20pre%20%3E%20code%2C%20samp%2C%0Akbd%2C%20%2A%3Anot%28pre%29%20%3E%20code%7B%0Afont%2Dfamily%3A%20SFMono%2DRegular%2CConsolas%2CLiberation%20Mono%2CMenlo%2C%20monospace%2C%20monospace%3B%0A%7D%0A%2Epage%2Dheader%7B%0Adisplay%3A%20block%3B%0A%7D%0A%2Epage%2Dheader%20%2Ehome%20%7B%0Afont%2Dsize%3A%20120%25%3B%20display%3A%20inline%2Dblock%3B%0A%0Aline%2Dheight%3A%2048px%3B%0A%7D%0A%23title%2Dblock%2Dheader%20%2Etitle%7B%0Amargin%2Dtop%3A0%3B%0A%7D%0Amain%7B%0Amin%2Dheight%3A%2075vh%3B%0A%7D%0Asection%2Elevel1%20%7B%0Aborder%2Dtop%3A%201px%20solid%20var%28%2D%2Dborder%2Dtable%29%3B%0Amargin%2Dtop%3A3rem%3B%0A%7D%0Afooter%7B%0Amargin%2Dtop%3A%203rem%3B%0Apadding%2Dtop%3A%20%2E5rem%3B%0Aborder%2Dtop%3A%201px%20solid%20var%28%2D%2Dborder%2Dtable%29%3B%0Apadding%2Dbottom%3A%202rem%3B%0A%7D%0Afooter%20%2Elinks%20a%3Anot%28%3Alast%2Dchild%29%7B%0Adisplay%3A%20inline%2Dblock%3B%0Amargin%2Dright%3A%201em%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20var%28%2D%2Dcolor%2Dlink%29%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20var%28%2D%2Dcolor%2Dlink%2Dvisited%29%3B%0A%7D%0Aa%3Ahover%2C%20a%3Afocus%20%7B%0Acolor%3A%20var%28%2D%2Dcolor%2Dlink%2Dhover%29%3B%0A%7D%0Aa%3Aactive%20%7B%0Acolor%3A%20var%28%2D%2Dcolor%2Dlink%2Dactive%29%3B%0A%7D%0Aa%3Afocus%20%7B%0Aoutline%3A%20thin%20dotted%3B%0A%7D%0A%2A%3A%3A%2Dmoz%2Dselection%20%7B%0Abackground%3A%20var%28%2D%2Dbg%2Dselection%29%3B%0Acolor%3A%20var%28%2D%2Dcolor%2Dselected%2Dtext%29%3B%0A%7D%0A%2A%3A%3Aselection%20%7B%0Abackground%3A%20var%28%2D%2Dbg%2Dselection%29%3B%0Acolor%3A%20var%28%2D%2Dcolor%2Dselected%2Dtext%29%3B%0A%7D%0Aa%3A%3A%2Dmoz%2Dselection%20%7B%0Abackground%3A%20var%28%2D%2Dbg%2Dselection%29%3B%0Acolor%3A%20var%28%2D%2Dcolor%2Dselected%2Dlink%29%3B%0A%7D%0Aa%3A%3Aselection%20%7B%0Abackground%3A%20var%28%2D%2Dbg%2Dselection%29%3B%0Acolor%3A%20var%28%2D%2Dcolor%2Dselected%2Dlink%29%3B%0A%7D%0Ap%20%7B%0Amargin%3A%201em%200%3B%0A%7D%0Aimg%20%7B%0Amax%2Dwidth%3A%20100%25%3B%0A%7D%0Ah1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7B%0Acolor%3A%20var%28%2D%2Dcolor%2Dtitle%29%3B%0Aline%2Dheight%3A%20125%25%3B%0Amargin%2Dtop%3A%202em%3B%0Afont%2Dweight%3A%20normal%3B%0A%7D%0Ah4%2C%20h5%2C%20h6%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Ah1%20%7B%0Afont%2Dsize%3A%201%2E85em%3B%0A%7D%0Ah2%20%7B%0Afont%2Dsize%3A%201%2E65em%3B%0A%7D%0Ah3%20%7B%0Afont%2Dsize%3A%201%2E45em%3B%0A%7D%0Ah4%20%7B%0Afont%2Dsize%3A%201%2E25em%3B%0A%7D%0Ah5%20%7B%0Afont%2Dsize%3A%201%2E1em%3B%0A%7D%0Ah6%20%7B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Ablockquote%20%7B%0Acolor%3A%20var%28%2D%2Dcolor%2Dquote%29%3B%0Amargin%3A%200%3B%0Apadding%2Dleft%3A%201%2E5em%3B%0Aborder%2Dleft%3A%200%2E5em%20var%28%2D%2Dborder%2Dquote%29%20solid%3B%0A%7D%0Ahr%20%7B%0Adisplay%3A%20block%3B%0Aheight%3A%201px%3B%0Aborder%3A%200%3B%0Aborder%2Dtop%3A%201px%20solid%20var%28%2D%2Dborder%2Dhr%2D1%29%3B%0Aborder%2Dbottom%3A%201px%20solid%20var%28%2D%2Dborder%2Dhr%2D2%29%3B%0Amargin%3A%202rem%200%3B%0Apadding%3A%200%3B%0A%7D%0Ahr%20%2B%20section%20%3E%20h2%20%7Bmargin%2Dtop%3A%200%3B%7D%0Apre%2C%20pre%20%3E%20code%2C%20samp%20%7B%0Acolor%3A%20var%28%2D%2Dcolor%2Dcode%29%3B%0Abackground%3A%20var%28%2D%2Dbg%2Dcode%29%3B%0A%5Ffont%2Dfamily%3A%20%27courier%20new%27%2C%20monospace%3B%0Afont%2Dsize%3A%200%2E90em%3B%0A%7D%0Akbd%2C%20%2A%3Anot%28pre%29%20%3E%20code%2C%20%2A%3Anot%28pre%29%20%3E%20code%20span%7B%0Acolor%3A%20var%28%2D%2Dcolor%2Dinline%2Dcode%29%21important%3B%0Afont%2Dweight%3A%20normal%21important%3B%0A%7D%0Akbd%2C%20%2A%3Anot%28pre%29%20%3E%20code%7B%0Abackground%3A%20var%28%2D%2Dbg%2Dinline%2Dcode%29%3B%0Adisplay%3A%20inline%2Dblock%3B%0Apadding%3A%200%20%2E4em%3B%0Amargin%2Dleft%3A%203px%3B%0Amargin%2Dright%3A%203px%3B%0Afont%2Dsize%3A%20%2E85em%3B%0Aborder%2Dradius%3A%206px%3B%0A%7D%0Adiv%2EsourceCode%7B%0Apadding%3A%20%2E75rem%3B%0Aborder%2Dradius%3A%202px%3B%0Abackground%3A%20var%28%2D%2Dbg%2Dcode%29%3B%0A%7D%0Apre%20%7B%0Awhite%2Dspace%3A%20pre%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%0Aword%2Dwrap%3A%20break%2Dword%3B%0A%7D%0Ab%2C%20strong%20%7B%0Afont%2Dweight%3A%20900%3B%0Aletter%2Dspacing%3A%20%2E05em%3B%0A%7D%0Adfn%20%7B%0Afont%2Dstyle%3A%20italic%3B%0A%7D%0Ains%20%7B%0Abackground%3A%20var%28%2D%2Dbg%2Dins%29%3B%0Acolor%3A%20var%28%2D%2Dcolor%2Dcode%29%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Amark%20%7B%0Abackground%3A%20var%28%2D%2Dbg%2Dmark%29%3B%0Acolor%3Avar%28%2D%2Dcolor%2Dcode%29%3B%0Afont%2Dstyle%3A%20italic%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Asub%2C%20sup%20%7B%0Afont%2Dsize%3A%2075%25%3B%0Aline%2Dheight%3A%200%3B%0Aposition%3A%20relative%3B%0Avertical%2Dalign%3A%20baseline%3B%0A%7D%0Asup%20%7B%0Atop%3A%20%2D0%2E5em%3B%0A%7D%0Asub%20%7B%0Abottom%3A%20%2D0%2E25em%3B%0A%7D%0Aul%2C%20ol%20%7B%0Amargin%3A%201em%200%3B%0Apadding%3A%200%200%200%202em%3B%0A%7D%0Ali%20p%3Alast%2Dchild%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Aul%20ul%2C%20ol%20ol%20%7B%0Amargin%3A%20%2E3em%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dbottom%3A%201em%3B%0A%7D%0Adt%20%7B%0Afont%2Dweight%3A%20bold%3B%0Amargin%2Dbottom%3A%20%2E8em%3B%0A%7D%0Add%20%7B%0Amargin%3A%200%200%20%2E8em%202em%3B%0A%7D%0Add%3Alast%2Dchild%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Aimg%20%7B%0Aborder%3A%200%3B%0A%2Dms%2Dinterpolation%2Dmode%3A%20bicubic%3B%0Avertical%2Dalign%3A%20middle%3B%0A%7D%0Afigure%20%7B%0Adisplay%3A%20block%3B%0Atext%2Dalign%3A%20center%3B%0Amargin%3A%201em%200%3B%0A%7D%0Afigure%20img%20%7B%0Aborder%3A%20none%3B%0Amargin%3A%200%20auto%3B%0A%7D%0Afigcaption%20%7B%0Afont%2Dsize%3A%200%2E8em%3B%0Afont%2Dstyle%3A%20italic%3B%0Amargin%3A%200%200%20%2E8em%3B%0A%7D%0Atable%20%7B%0Amargin%2Dbottom%3A%202em%3B%0Aborder%2Dbottom%3A%201px%20solid%20var%28%2D%2Dborder%2Dtable%29%3B%0Aborder%2Dright%3A%201px%20solid%20var%28%2D%2Dborder%2Dtable%29%3B%0Aborder%2Dspacing%3A%200%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Apadding%3A%20%2E2em%201em%3B%0Abackground%2Dcolor%3A%20var%28%2D%2Dbg%2Dtable%2Dheader%29%3B%0Aborder%2Dtop%3A%201px%20solid%20var%28%2D%2Dborder%2Dtable%29%3B%0Aborder%2Dleft%3A%201px%20solid%20var%28%2D%2Dborder%2Dtable%29%3B%0A%7D%0Atable%20td%20%7B%0Apadding%3A%20%2E2em%201em%3B%0Aborder%2Dtop%3A%201px%20solid%20var%28%2D%2Dborder%2Dtable%29%3B%0Aborder%2Dleft%3A%201px%20solid%20var%28%2D%2Dborder%2Dtable%29%3B%0Avertical%2Dalign%3A%20top%3B%0A%7D%0A%2Eauthor%20%7B%0Afont%2Dsize%3A%201%2E2em%3B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%40media%28min%2Dwidth%3A678px%29%7B%0Ah1%20%7B%0Afont%2Dsize%3A%202%2E2em%3B%0A%7D%0Ah2%20%7B%0Afont%2Dsize%3A%201%2E75em%3B%0A%7D%0Ah3%20%7B%0Afont%2Dsize%3A%201%2E5em%3B%0A%7D%0Ah4%20%7B%0Afont%2Dsize%3A%201%2E2em%3B%0A%7D%0Ah5%20%7B%0Afont%2Dsize%3A%201em%3B%0A%7D%0Ah6%20%7B%0Afont%2Dsize%3A%200%2E9em%3B%0A%7D%0A%23title%2Dblock%2Dheader%20%2Etitle%7B%0Amargin%2Dtop%3A%202em%3B%0A%7D%0A%7D%0A%40media%20print%20%7B%0A%2A%20%7B%0Abackground%3A%20transparent%20%21important%3B%0Acolor%3A%20black%20%21important%3B%0Afilter%3A%20none%20%21important%3B%0A%2Dms%2Dfilter%3A%20none%20%21important%3B%0A%7D%0Abody%20%7B%0Afont%2Dsize%3A%2012pt%3B%0Amax%2Dwidth%3A%20100%25%3B%0A%7D%0Aa%2C%20a%3Avisited%20%7B%0Atext%2Ddecoration%3A%20underline%3B%0A%7D%0Ahr%20%7B%0Aheight%3A%201px%3B%0Aborder%3A%200%3B%0Aborder%2Dbottom%3A%201px%20solid%20black%3B%0A%7D%0Aa%5Bhref%5D%3Aafter%20%7B%0Acontent%3A%20%22%20%28%22%20attr%28href%29%20%22%29%22%3B%0A%7D%0Aabbr%5Btitle%5D%3Aafter%20%7B%0Acontent%3A%20%22%20%28%22%20attr%28title%29%20%22%29%22%3B%0A%7D%0A%2Eir%20a%3Aafter%2C%20a%5Bhref%5E%3D%22javascript%3A%22%5D%3Aafter%2C%20a%5Bhref%5E%3D%22%23%22%5D%3Aafter%20%7B%0Acontent%3A%20%22%22%3B%0A%7D%0Apre%2C%20blockquote%20%7B%0Aborder%3A%201px%20solid%20%23999%3B%0Apadding%2Dright%3A%201em%3B%0Apage%2Dbreak%2Dinside%3A%20avoid%3B%0A%7D%0Atr%2C%20img%20%7B%0Apage%2Dbreak%2Dinside%3A%20avoid%3B%0A%7D%0Aimg%20%7B%0Amax%2Dwidth%3A%20100%25%20%21important%3B%0A%7D%0A%40page%20%3Aleft%20%7B%0Amargin%3A%2015mm%2020mm%2015mm%2010mm%3B%0A%7D%0A%40page%20%3Aright%20%7B%0Amargin%3A%2015mm%2010mm%2015mm%2020mm%3B%0A%7D%0Ap%2C%20h2%2C%20h3%20%7B%0Aorphans%3A%203%3B%0Awidows%3A%203%3B%0A%7D%0Ah2%2C%20h3%20%7B%0Apage%2Dbreak%2Dafter%3A%20avoid%3B%0A%7D%0A%7D%0A" />
 </head>
 <body>
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+
+<header class="page-header">
+    <div>
+        <a class="home" href="/">CSCI 1301</a>
+        <a href="/book">Book</a>
+        <a href="/labs">Labs</a>
+    </div>
+</header>
 <main>
 <header id="title-block-header">
-<h1 class="title">Not Found</h1>
+<h1 class="title">Datatypes in C#</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 20, 2021 (10:34:51 PM)</p>
 </header>
-<p>The page you are looking does not exist.</p>
-<p><a href="/">Go Home</a></p>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#value-types">Value Types</a>
+<ul>
+<li><a href="#numeric">Numeric</a>
+<ul>
+<li><a href="#signed-integer">Signed Integer</a></li>
+<li><a href="#unsigned-integer">Unsigned Integer</a></li>
+<li><a href="#floating-point-numbers">Floating-point Numbers</a></li>
+</ul></li>
+<li><a href="#logical">Logical</a></li>
+<li><a href="#character">Character</a></li>
+</ul></li>
+<li><a href="#literals">Literals</a></li>
+<li><a href="#compatibility">Compatibility</a></li>
+<li><a href="#result-type-of-operations">Result Type of Operations</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+<section id="value-types" class="level1">
+<h1>Value Types</h1>
+<section id="numeric" class="level2">
+<h2>Numeric</h2>
+<section id="signed-integer" class="level3">
+<h3>Signed Integer</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 56%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Range</th>
+<th style="text-align: center;">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">sbyte</span></code></td>
+<td style="text-align: center;">-128 to 127</td>
+<td style="text-align: center;">Signed 8-bit integer</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">short</span></code></td>
+<td style="text-align: center;">-32,768 to 32,767</td>
+<td style="text-align: center;">Signed 16-bit integer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">int</span></code></td>
+<td style="text-align: center;">-2,147,483,648 to 2,147,483,647</td>
+<td style="text-align: center;">Signed 32-bit integer</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">long</span></code></td>
+<td style="text-align: center;">-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+<td style="text-align: center;">Signed 64-bit integer</td>
+</tr>
+</tbody>
+</table>
+<!--
+Larger integers can be represented with `BigInteger` (<https://msdn.microsoft.com/en-us/library/system.numerics.biginteger.aspx>).
+-->
+</section>
+<section id="unsigned-integer" class="level3">
+<h3>Unsigned Integer</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Range</th>
+<th style="text-align: center;">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">byte</span></code></td>
+<td style="text-align: center;">0 to 255</td>
+<td style="text-align: center;">Unsigned 8-bit integer</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">ushort</span></code></td>
+<td style="text-align: center;">0 to 65,535</td>
+<td style="text-align: center;">Unsigned 16-bit integer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">uint</span></code></td>
+<td style="text-align: center;">0 to 4,294,967,295</td>
+<td style="text-align: center;">Unsigned 32-bit integer</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">ulong</span></code></td>
+<td style="text-align: center;">0 to 18,446,744,073,709,551,615</td>
+<td style="text-align: center;">Unsigned 64-bit integer</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="floating-point-numbers" class="level3">
+<h3>Floating-point Numbers</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Approximate Range</th>
+<th style="text-align: center;">Precision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">float</span></code></td>
+<td style="text-align: center;">±1.5e−45 to ±3.4e38</td>
+<td style="text-align: center;">7 digits</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">double</span></code></td>
+<td style="text-align: center;">±5.0e−324 to ±1.7e308</td>
+<td style="text-align: center;">15–16 digits</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">decimal</span></code></td>
+<td style="text-align: center;">(-7.9 x 1028 to 7.9 x 1028)/(100 to 1028)</td>
+<td style="text-align: center;">28–29 significant digits</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="logical" class="level2">
+<h2>Logical</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Possible Values</th>
+<th style="text-align: center;">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">bool</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="kw">true</span></code>, <code class="sourceCode cs"><span class="kw">false</span></code></td>
+<td style="text-align: center;">8-bit</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="character" class="level2">
+<h2>Character</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Range</th>
+<th style="text-align: center;">Size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">char</span></code></td>
+<td style="text-align: center;">U+0000 to U+ffff</td>
+<td style="text-align: center;">Unicode 16-bit character</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="literals" class="level1">
+<h1>Literals</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Corresponding datatype</th>
+<th style="text-align: center;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Integer Literal</td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">int</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dv">40</span></code>, <code class="sourceCode cs"><span class="op">-</span><span class="dv">39</span></code>, <code class="sourceCode cs"><span class="dv">291838</span></code>, <code class="sourceCode cs"><span class="dv">0</span></code>, …</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Float Litteral</td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">float</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="fl">3.5F</span></code>, <code class="sourceCode cs"><span class="op">-</span><span class="fl">43.5f</span></code>, <code class="sourceCode cs"><span class="fl">309430.70006F</span></code>, …</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Double Literal</td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">double</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="fl">28.98</span></code>, <code class="sourceCode cs"><span class="fl">239.0</span></code>, <code class="sourceCode cs"><span class="op">-</span><span class="fl">391.089</span></code>, <code class="sourceCode cs"><span class="fl">0.0</span></code>, …</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Decimal Literal</td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">decimal</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="fl">8.95m</span></code>, <code class="sourceCode cs"><span class="fl">3283.9M</span></code>, <code class="sourceCode cs"><span class="op">-</span>30m</code>, …</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Boolean Literal</td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">bool</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="kw">true</span></code>, <code class="sourceCode cs"><span class="kw">false</span></code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Character Literal</td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">char</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="ch">&#39;Y&#39;</span></code>, <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span></code>, <code class="sourceCode cs"><span class="ch">&#39;0&#39;</span></code>, <code class="sourceCode cs"><span class="ch">&#39;\n&#39;</span></code>, <code class="sourceCode cs"><span class="ch">&#39;\x0058&#39;</span></code>, <code class="sourceCode cs">&#39;\u0058&#39;</code>, …</td>
+</tr>
+</tbody>
+</table>
+<!--
+Hexadecimal and unicode
+-->
+</section>
+<section id="compatibility" class="level1">
+<h1>Compatibility</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th style="text-align: center;"><strong>Integer Litteral</strong></th>
+<th style="text-align: center;"><strong>Float Litteral</strong></th>
+<th style="text-align: center;"><strong>Double Litteral</strong></th>
+<th style="text-align: center;"><strong>Decimal Litteral</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><strong><code class="sourceCode cs"><span class="dt">int</span></code></strong></td>
+<td style="text-align: center;"><span class="math inline">✓</span></td>
+<td style="text-align: center;">✘</td>
+<td style="text-align: center;">✘</td>
+<td style="text-align: center;">✘</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong><code class="sourceCode cs"><span class="dt">float</span></code> </strong></td>
+<td style="text-align: center;"><span class="math inline">✓</span></td>
+<td style="text-align: center;"><span class="math inline">✓</span></td>
+<td style="text-align: center;">✘</td>
+<td style="text-align: center;">✘</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong><code class="sourceCode cs"><span class="dt">double</span></code> </strong></td>
+<td style="text-align: center;"><span class="math inline">✓</span></td>
+<td style="text-align: center;"><span class="math inline">✓</span></td>
+<td style="text-align: center;"><span class="math inline">✓</span></td>
+<td style="text-align: center;">✘</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong><code class="sourceCode cs"><span class="dt">decimal</span></code> </strong></td>
+<td style="text-align: center;"><span class="math inline">✓</span></td>
+<td style="text-align: center;">✘</td>
+<td style="text-align: center;">✘</td>
+<td style="text-align: center;"><span class="math inline">✓</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="result-type-of-operations" class="level1">
+<h1>Result Type of Operations</h1>
+<!--
+| Type of One Operand | Type of the Other Operand | Type of Result |
+| :---: |  :---: |  :---: | 
+| `int` | `int` | `int` |
+| `double` | `double` | `double` |
+| `decimal` | `decimal` | `decimal` |
+| `int` | `double` | `double` |
+| `int` | `decimal` | `decimal` |
+| `double` | `decimal` | `decimal` |
+-->
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th style="text-align: center;"><strong><code class="sourceCode cs"><span class="dt">int</span></code></strong></th>
+<th style="text-align: center;"><strong><code class="sourceCode cs"><span class="dt">float</span></code></strong></th>
+<th style="text-align: center;"><strong><code class="sourceCode cs"><span class="dt">double</span></code></strong></th>
+<th style="text-align: center;"><strong><code class="sourceCode cs"><span class="dt">decimal</span></code></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><strong><code class="sourceCode cs"><span class="dt">int</span></code></strong></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">int</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">float</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">double</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">decimal</span></code></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong><code class="sourceCode cs"><span class="dt">float</span></code></strong></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">float</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">float</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">double</span></code></td>
+<td style="text-align: center;">illegal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong><code class="sourceCode cs"><span class="dt">double</span></code></strong></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">double</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">double</span></code></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">double</span></code></td>
+<td style="text-align: center;">illegal</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><strong><code class="sourceCode cs"><span class="dt">decimal</span></code></strong></td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">decimal</span></code></td>
+<td style="text-align: center;">illegal</td>
+<td style="text-align: center;">illegal</td>
+<td style="text-align: center;"><code class="sourceCode cs"><span class="dt">decimal</span></code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="references" class="level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/types-and-variables" class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/types-and-variables</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/integral-types-table" class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/integral-types-table</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/floating-point-types-table" class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/floating-point-types-table</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types-table" class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types-table</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/implicit-numeric-conversions-table" class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/implicit-numeric-conversions-table</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/explicit-numeric-conversions-table" class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/explicit-numeric-conversions-table</a></li>
+</ul>
+</section>
 </main>
 
 <footer id="footer">
@@ -44,7 +452,9 @@
     <script data-external="1" src="https://utteranc.es/client.js" repo="csci-1301/csci-1301.github.io" issue-term="pathname" label="labs" theme="github-light" crossorigin="anonymous" async>
     </script>
     <div class="links">
-                            <a href="https://github.com/csci-1301/csci-1301.github.io" title="Access the source code of this website.">Source Code</a>
+                    <a href="datatypes_in_csharp.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="datatypes_in_csharp.odt" title="Download this ressource in odt.">↓ odt</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/tree/main/docs/datatypes_in_csharp.md" title="Access the source code of this ressource.">Source code</a>
                 <a href="/about" title="Learn more about this website.">About</a>
         </div> 
 </footer>
