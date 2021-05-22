@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 22, 2021 (08:24:13 AM)</p>
+<p class="date">May 22, 2021 (06:09:26 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -270,14 +270,6 @@
 <li><a href="#reserved-words-and-identifiers">Reserved Words and Identifiers</a></li>
 <li><a href="#write-and-writeline">Write and WriteLine</a></li>
 <li><a href="#escape-sequences">Escape Sequences</a></li>
-<li><a href="#variable">Variable</a></li>
-<li><a href="#numerical-values">Numerical Values</a></li>
-<li><a href="#booleans">Booleans</a></li>
-<li><a href="#strings">Strings</a>
-<ul>
-<li><a href="#displaying-strings-on-the-screen">Displaying Strings on the Screen</a></li>
-</ul></li>
-<li><a href="#characters">Characters</a></li>
 </ul></li>
 <li><a href="#datatypes-and-variables">Datatypes and Variables</a>
 <ul>
@@ -286,6 +278,7 @@
 <li><a href="#variable-operations">Variable Operations</a></li>
 <li><a href="#variables-in-memory">Variables in Memory</a></li>
 </ul></li>
+<li><a href="#operators">Operators</a></li>
 <li><a href="#operations-on-int-reminder">Operations on <code class="sourceCode cs"><span class="dt">int</span></code> (reminder)</a></li>
 <li><a href="#implicit-and-explicit-conversions-between-numeric-datatypes">Implicit and Explicit Conversions Between Numeric Datatypes</a></li>
 <li><a href="#operations-on-other-numerical-datatypes">Operations on other numerical datatypes</a></li>
@@ -663,7 +656,7 @@
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Features of this program:</p>
 <ul>
-<li>A multi-line comment: everything between the <code class="sourceCode cs"><span class="co">/*</span></code> and <code class="sourceCode cs"><span class="co">/*</span></code> is considered a <em>comment</em>, i.e. text for humans to read. It will be ignored by the C# compiler and has no effect on the program.</li>
+<li>A multi-line comment: everything between the <code class="sourceCode cs"><span class="co">/*</span></code> and <code class="sourceCode cs"><span class="op">*/</span></code> is considered a <em>comment</em>, i.e. text for humans to read. It will be ignored by the C# compiler and has no effect on the program.</li>
 <li>A <code class="sourceCode cs"><span class="kw">using</span></code> statement: This imports code definitions from the System <em>namespace</em>, which is part of the .NET Framework (the standard library).
 <ul>
 <li>In C#, code is organized into <strong>namespaces</strong>, which group related classes together</li>
@@ -794,7 +787,7 @@
 <section id="write-and-writeline" class="level2">
 <h2>Write and WriteLine</h2>
 <ul>
-<li>The <code class="sourceCode cs">WriteLine</code> method
+<li><p>The <code class="sourceCode cs">WriteLine</code> method</p>
 <ul>
 <li><p>We saw this in the “Hello World” program: <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hello World!&quot;</span><span class="op">);</span></code> results in “Hello World!” being displayed in the terminal</p></li>
 <li><p>In general, <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;text&quot;</span><span class="op">);</span></code> will display the text in the terminal, then <em>start a new line</em></p></li>
@@ -813,7 +806,7 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Hello</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>World<span class="op">!</span></span></code></pre></div></li>
 </ul></li>
-<li>Methods with multiple statements
+<li><p>Methods with multiple statements</p>
 <ul>
 <li>Note that our two-line example has a <code class="sourceCode cs">Main</code> method with multiple statements</li>
 <li>In C#, each statement must end in a semicolon</li>
@@ -821,7 +814,7 @@
 <li>Each line of code in your .cs file is not necessarily a statement</li>
 <li>A single invocation/call of the <code class="sourceCode cs">WriteLine</code> method is a statement</li>
 </ul></li>
-<li>The <code class="sourceCode cs">Write</code> method
+<li><p>The <code class="sourceCode cs">Write</code> method</p>
 <ul>
 <li><p><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;text&quot;</span><span class="op">)</span></code> prints the text, then starts a new line in the terminal – it effectively “hits enter” after printing the text</p></li>
 <li><p><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;text&quot;</span><span class="op">)</span></code> just prints the text, without starting a new line. It’s like typing the text without hitting “enter” afterwards.</p></li>
@@ -840,7 +833,7 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>HelloWorld<span class="op">!</span></span></code></pre></div></li>
 <li><p>Note that there is no space between “Hello” and “World!” because we didn’t type one in the argument to <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">Write</span></code></p></li>
 </ul></li>
-<li>Combining <code class="sourceCode cs">Write</code> and <code class="sourceCode cs">WriteLine</code>
+<li><p>Combining <code class="sourceCode cs">Write</code> and <code class="sourceCode cs">WriteLine</code></p>
 <ul>
 <li><p>We can use both <code class="sourceCode cs">WriteLine</code> and <code class="sourceCode cs">Write</code> in the same program</p></li>
 <li><p>After a call to <code class="sourceCode cs">Write</code>, the “cursor” is on the same line after the printed text; after a call to <code class="sourceCode cs">WriteLine</code> the “cursor” is at the beginning of the next line</p></li>
@@ -866,7 +859,7 @@
 <section id="escape-sequences" class="level2">
 <h2>Escape Sequences</h2>
 <ul>
-<li>Explicitly writing a new line
+<li><p>Explicitly writing a new line</p>
 <ul>
 <li><p>So far we’ve used <code class="sourceCode cs">WriteLine</code> when we want to create a new line in the output</p></li>
 <li><p>The <strong>escape sequence</strong> <code class="sourceCode cs">\n</code> can also be used to create a new line – it represents the “newline character,” which is what gets printed when you type “enter”</p></li>
@@ -881,14 +874,14 @@
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 </ul></li>
-<li>Escape sequences in detail
+<li><p>Escape sequences in detail</p>
 <ul>
-<li>An <strong>escape sequence</strong> uses “normal” letters to represent “special”, hard-to-type characters</li>
-<li><code class="sourceCode cs">\n</code> represents the newline character, i.e. the result of pressing “enter”</li>
-<li><code class="sourceCode cs">\t</code> represents the tab character, which is a single extra-wide space (you usually get it by pressing the “tab” key)</li>
-<li><code class="sourceCode cs">\<span class="st">&quot;</span></code> represents a double-quote character that will get printed on the screen, rather than ending the text string in the C# code.
+<li><p>An <strong>escape sequence</strong> uses “normal” letters to represent “special”, hard-to-type characters</p></li>
+<li><p><code class="sourceCode cs">\n</code> represents the newline character, i.e. the result of pressing “enter”</p></li>
+<li><p><code class="sourceCode cs">\t</code> represents the tab character, which is a single extra-wide space (you usually get it by pressing the “tab” key)</p></li>
+<li><p><code class="sourceCode cs">\<span class="st">&quot;</span></code> represents a double-quote character that will get printed on the screen, rather than ending the text string in the C# code.</p>
 <ul>
-<li><p>Without this, you couldn’t write a sentence with quotation marks in a <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code>, because the C# compiler wouls assume the quotation marks meant the string was ending</p></li>
+<li><p>Without this, you couldn’t write a sentence with quotation marks in a <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code>, because the C# compiler would assume the quotation marks meant the string was ending</p></li>
 <li><p>This program won’t compile because <code class="sourceCode cs"><span class="kw">in</span> quotes</code> is not valid C# code, and the compiler thinks it is not part of the string:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Welcome</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -908,73 +901,15 @@
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
 </ul></li>
-<li>Note that all escape sequences begin with a backslash character (<code class="sourceCode cs">\</code>)</li>
-<li>General format is <code class="sourceCode cs">\<span class="op">[</span>key letter<span class="op">]</span></code> – the letter after the backslash is like a “keyword” indicating which special character to display</li>
-<li>If you want to put an actual backslash in your string, you need the escape sequence <code class="sourceCode cs">\\</code>, which prints a single backslash
+<li><p>Note that all escape sequences begin with a backslash character (<code class="sourceCode cs">\</code>)</p></li>
+<li><p>General format is <code class="sourceCode cs">\<span class="op">[</span>key letter<span class="op">]</span></code> – the letter after the backslash is like a “keyword” indicating which special character to display</p></li>
+<li><p>If you want to put an actual backslash in your string, you need the escape sequence <code class="sourceCode cs">\\</code>, which prints a single backslash</p>
 <ul>
 <li>This will result in a compile error because <code class="sourceCode cs">\U</code> is not a valid escape sequence: <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Go to C:\Users\Edward&quot;</span><span class="op">);</span></code></li>
-<li>This will display the path correctly: <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Go to C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Edward&quot;</span><span class="op">);</span></code> &lt;!–</li>
+<li>This will display the path correctly: <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Go to C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Edward&quot;</span><span class="op">);</span></code></li>
 </ul></li>
 </ul></li>
 </ul>
-<p>from list of topics, this should cover the following:</p>
-</section>
-<section id="variable" class="level2">
-<h2>Variable</h2>
-<ul>
-<li>Datatype (numerical, boolean, string, character) – including a mention of reference datatypes</li>
-<li>Declaration, assignment, initialization</li>
-<li>Naming variables correctly</li>
-<li>The absence of default value after declaration (un-assigned variables)</li>
-</ul>
-</section>
-<section id="numerical-values" class="level2">
-<h2>Numerical Values</h2>
-<ul>
-<li>Integers (<code class="sourceCode cs"><span class="dt">int</span></code>, <code class="sourceCode cs"><span class="dt">long</span></code>) – range and size, signature (<code class="sourceCode cs"><span class="dt">uint</span></code>)</li>
-<li>Floating Point (<code class="sourceCode cs"><span class="dt">float</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, and <code class="sourceCode cs"><span class="dt">decimal</span></code>) – range, size and precision,</li>
-<li>Type casting (e.g. from <code class="sourceCode cs"><span class="dt">int</span></code> to <code class="sourceCode cs"><span class="dt">double</span></code>, and legal operations between different datatypes) and casting operator (e.g. <code class="sourceCode cs"><span class="op">(</span><span class="dt">int</span><span class="op">)</span></code>).</li>
-<li>Overflow and underflow <span class="emoji" data-emoji="lock">🔒</span></li>
-</ul>
-</section>
-<section id="booleans" class="level2">
-<h2>Booleans</h2>
-<ul>
-<li>Possible values (<code class="sourceCode cs"><span class="kw">true</span></code>, <code class="sourceCode cs"><span class="kw">false</span></code>)</li>
-<li>Usage</li>
-<li>That boolean variables are called “switches”</li>
-</ul>
-</section>
-<section id="strings" class="level2">
-<h2>Strings</h2>
-<ul>
-<li><code class="sourceCode cs">ReadLine</code> method</li>
-<li>Concatenation (<code class="sourceCode cs"><span class="op">+</span></code>)</li>
-<li>Interpolation</li>
-<li>Additional methods: <code class="sourceCode cs">ToLower</code>, <code class="sourceCode cs">ToUpper</code>, <code class="sourceCode cs">Contains</code> <span class="emoji" data-emoji="question">❓</span></li>
-</ul>
-<section id="displaying-strings-on-the-screen" class="level3">
-<h3>Displaying Strings on the Screen</h3>
-<ul>
-<li><a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings">Format specifiers</a> for numbers: – Currency (<code class="sourceCode cs">C</code>),
-<ul>
-<li>Fixed-point (<code class="sourceCode cs">F</code>) or Number (<code class="sourceCode cs">N</code>)</li>
-<li>Percent (<code class="sourceCode cs">P</code>) <span class="emoji" data-emoji="question">❓</span></li>
-<li>Exponential (<code class="sourceCode cs">E</code>) <span class="emoji" data-emoji="question">❓</span></li>
-</ul></li>
-<li>The <code class="sourceCode cs">String<span class="op">.</span><span class="fu">Format</span></code> method</li>
-</ul>
-</section>
-</section>
-<section id="characters" class="level2">
-<h2>Characters</h2>
-<ul>
-<li>Possible values and the existence of binary, oct, dec and hex representation (cf. for instance <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters">wikipedia</a>)</li>
-<li>Escape character and sequences: <code class="sourceCode cs">\n</code>, <code class="sourceCode cs">\t</code>, <code class="sourceCode cs">\\</code></li>
-<li>Conversion between glyph and decimal value.</li>
-<li>Various methods: <code class="sourceCode cs">ToLower</code>, <code class="sourceCode cs">ToUpper</code>, <code class="sourceCode cs">Contains</code>, <code class="sourceCode cs">StartsWith</code>, <code class="sourceCode cs">EndsWith</code> <span class="emoji" data-emoji="question">❓</span></li>
-</ul>
-<p>–&gt;</p>
 </section>
 </section>
 <section id="datatypes-and-variables" class="level1">
@@ -1101,19 +1036,18 @@
 </ul></li>
 <li>Assignment Details
 <ul>
-<li>Assignment replaces the “old” value of the variable with a “new” one; it’s how variables <em>vary</em>
+<li><p>Assignment replaces the “old” value of the variable with a “new” one; it’s how variables <em>vary</em></p>
 <ul>
 <li>If you initialize a variable with <code class="sourceCode cs"><span class="dt">int</span> myAge <span class="op">=</span> <span class="dv">29</span><span class="op">;</span></code> and then write <code class="sourceCode cs">myAge <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></code>, the variable <code class="sourceCode cs">myAge</code> now store the value 30</li>
 </ul></li>
-<li>You can assign a variable to another variable: just write a variable name on both sides of the <code class="sourceCode cs"><span class="op">=</span></code> operator
+<li><p>You can assign a variable to another variable: just write a variable name on both sides of the <code class="sourceCode cs"><span class="op">=</span></code> operator</p>
 <ul>
 <li><p>This will take a “snapshot” of the current value of the variable on the right side, and store it into the variable on the left side</p></li>
 <li><p>For example, in this code:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> b <span class="op">=</span> a<span class="op">;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">5</span><span class="op">;</span></span></code></pre></div>
-<p>the variable <code class="sourceCode cs">b</code> gets the value 12, because that’s the value that <code class="sourceCode cs">a</code> had when the statement <code class="sourceCode cs"><span class="dt">int</span> b <span class="op">=</span> a</code> was executed. Even though <code class="sourceCode cs">a</code> was then changed to -5 afterward, <code class="sourceCode cs">b</code> is still <code class="sourceCode cs"><span class="dv">12</span></code>.<br />
-</p></li>
+<p>the variable <code class="sourceCode cs">b</code> gets the value 12, because that’s the value that <code class="sourceCode cs">a</code> had when the statement <code class="sourceCode cs"><span class="dt">int</span> b <span class="op">=</span> a</code> was executed. Even though <code class="sourceCode cs">a</code> was then changed to -5 afterward, <code class="sourceCode cs">b</code> is still <code class="sourceCode cs"><span class="dv">12</span></code>.</p></li>
 </ul></li>
 </ul></li>
 <li>Displaying
@@ -1181,29 +1115,114 @@
 <li>Use <code class="sourceCode cs"><span class="dt">decimal</span></code> when working with money (since money uses a lot of 0.1 and 0.01 fractions), <code class="sourceCode cs"><span class="dt">double</span></code> when working with non-money fractions</li>
 </ul></li>
 </ul></li>
+</ul>
+<p><strong>Summary of numeric data types and sizes:</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 33%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Size</th>
+<th>Range of Values</th>
+<th>Precision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code class="sourceCode cs"><span class="dt">byte</span></code></td>
+<td>1 bytes</td>
+<td><span class="math inline">0...255</span></td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode cs"><span class="dt">short</span></code></td>
+<td>2 bytes</td>
+<td><span class="math inline"> − 2<sup>15</sup>...2<sup>15</sup> − 1</span></td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode cs"><span class="dt">ushort</span></code></td>
+<td>2 bytes</td>
+<td><span class="math inline">0...2<sup>16</sup> − 1</span></td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode cs"><span class="dt">int</span></code></td>
+<td>4 bytes</td>
+<td><span class="math inline"> − 2<sup>31</sup>...2<sup>31</sup> − 1</span></td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode cs"><span class="dt">uint</span></code></td>
+<td>4 bytes</td>
+<td><span class="math inline">0...2<sup>32</sup> − 1</span></td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode cs"><span class="dt">long</span></code></td>
+<td>8 bytes</td>
+<td><span class="math inline"> − 2<sup>63</sup>...2<sup>63</sup> − 1</span></td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode cs"><span class="dt">ulong</span></code></td>
+<td>8 bytes</td>
+<td><span class="math inline">0...2<sup>64</sup> − 1</span></td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode cs"><span class="dt">float</span></code></td>
+<td>4 bytes</td>
+<td><span class="math inline"> ± 1.5 ⋅ 10<sup> − 45</sup>... ± 3.4 ⋅ 10<sup>38</sup></span></td>
+<td>7 digits</td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode cs"><span class="dt">double</span></code></td>
+<td>8 bytes</td>
+<td><span class="math inline"> ± 5.0 ⋅ 10<sup> − 324</sup>... ± 1.7 ⋅ 10<sup>308</sup></span></td>
+<td>15-16 digits</td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode cs"><span class="dt">decimal</span></code></td>
+<td>16 bytes</td>
+<td><span class="math inline"> ± 1.0 ⋅ 10<sup> − 28</sup>... ± 7.9 ⋅ 10<sup>28</sup></span></td>
+<td>28-29 digits</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Value and reference types: different ways of storing data in memory
 <ul>
-<li>Variables name memory locations, but the data that gets stored at the named location is different for each type</li>
-<li>For a <strong>value type</strong> variable, the named memory location stores the exact data value held by the variable (just what you’d expect)</li>
-<li>Value types: all the numeric types (<code class="sourceCode cs"><span class="dt">int</span></code>, <code class="sourceCode cs"><span class="dt">float</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, <code class="sourceCode cs"><span class="dt">decimal</span></code>, etc.), <code class="sourceCode cs"><span class="dt">char</span></code>, and <code class="sourceCode cs"><span class="dt">bool</span></code></li>
-<li>For a <strong>reference type</strong> variable, the named memory location stores a <em>reference</em> to the data, not the data itself
+<li><p>Variables name memory locations, but the data that gets stored at the named location is different for each type</p></li>
+<li><p>For a <strong>value type</strong> variable, the named memory location stores the exact data value held by the variable (just what you’d expect)</p></li>
+<li><p>Value types: all the numeric types (<code class="sourceCode cs"><span class="dt">int</span></code>, <code class="sourceCode cs"><span class="dt">float</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, <code class="sourceCode cs"><span class="dt">decimal</span></code>, etc.), <code class="sourceCode cs"><span class="dt">char</span></code>, and <code class="sourceCode cs"><span class="dt">bool</span></code></p></li>
+<li><p>For a <strong>reference type</strong> variable, the named memory location stores a <em>reference</em> to the data, not the data itself</p>
 <ul>
 <li>The contents of the memory location named by the variable are the address of another memory location</li>
 <li>The <em>other</em> memory location is where the variable’s data is stored</li>
 <li>To get to the data, the computer first reads the location named by the variable, then uses that information (the memory address) to find and read the other memory location where the data is stored</li>
 </ul></li>
-<li>Reference types: <code class="sourceCode cs"><span class="dt">string</span></code>, <code class="sourceCode cs"><span class="dt">object</span></code>, and all objects you create from your own classes</li>
-<li>Assignment works differently for reference types
+<li><p>Reference types: <code class="sourceCode cs"><span class="dt">string</span></code>, <code class="sourceCode cs"><span class="dt">object</span></code>, and all objects you create from your own classes</p></li>
+<li><p>Assignment works differently for reference types</p>
 <ul>
 <li><p>Assignment always copies the value in the variable’s named memory location - but in the case of a reference type that’s just a memory address, not the data</p></li>
 <li><p>Assigning one reference-type variable to another copies the memory address, so now both variables “refer to” the same data</p></li>
 <li><p>Example:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> word <span class="op">=</span> <span class="st">&quot;Hello&quot;</span><span class="op">;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> word2 <span class="op">=</span> word<span class="op">;</span></span></code></pre></div>
-<p>Both <code class="sourceCode cs">word</code> and <code class="sourceCode cs">word2</code> contain the same memory address, pointing to the same memory location, which contains the string “Hello”. There is only one copy of the string “Hello”; <code class="sourceCode cs">word2</code> doesn’t get its own copy. # Operators</p></li>
+<p>Both <code class="sourceCode cs">word</code> and <code class="sourceCode cs">word2</code> contain the same memory address, pointing to the same memory location, which contains the string “Hello”. There is only one copy of the string “Hello”; <code class="sourceCode cs">word2</code> doesn’t get its own copy.</p></li>
 </ul></li>
 </ul></li>
 </ul>
+</section>
+</section>
+<section id="operators" class="level1">
+<h1>Operators</h1>
 <!-- 
 
 from list of topics, this should cover the following:
@@ -1219,7 +1238,6 @@ from list of topics, this should cover the following:
 - Combined assignment operators: `+=`, `*=`, `-=`, `/=`, `%=`
 
 -->
-</section>
 </section>
 <section id="operations-on-int-reminder" class="level1">
 <h1>Operations on <code class="sourceCode cs"><span class="dt">int</span></code> (reminder)</h1>
