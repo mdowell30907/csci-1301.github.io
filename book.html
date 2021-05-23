@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 23, 2021 (04:43:57 AM)</p>
+<p class="date">May 23, 2021 (06:36:55 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -1215,10 +1215,11 @@
 <li><p>Example:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> word <span class="op">=</span> <span class="st">&quot;Hello&quot;</span><span class="op">;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> word2 <span class="op">=</span> word<span class="op">;</span></span></code></pre></div>
-<p>Both <code class="sourceCode cs">word</code> and <code class="sourceCode cs">word2</code> contain the same memory address, pointing to the same memory location, which contains the string “Hello”. There is only one copy of the string “Hello”; <code class="sourceCode cs">word2</code> doesn’t get its own copy.</p></li>
+<p>Both <code class="sourceCode cs">word</code> and <code class="sourceCode cs">word2</code> contain the same memory address, pointing to the same memory location, which contains the string “Hello”. There is only one copy of the string “Hello”; <code class="sourceCode cs">word2</code> doesn’t get its own copy. ## Overflow</p></li>
 </ul></li>
 </ul></li>
 </ul>
+<p>When the result of some operations can’t be entirely stored in the corresponding datatype, an overflow occurs. To understand this, assume a car has a 4-digit odometer, and currently, it shows 9999. What does the odometer show if you drive the car another mile? As you guess, it shows 0000 while it must show 10000. The reason is the odometer does not have a counter for the fifth digit.</p>
 </section>
 </section>
 <section id="operators" class="level1">
