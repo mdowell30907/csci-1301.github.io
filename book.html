@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 24, 2021 (12:47:51 AM)</p>
+<p class="date">May 24, 2021 (01:14:46 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -277,7 +277,7 @@
 <li><a href="#literals-and-variables">Literals and Variables</a></li>
 <li><a href="#variable-operations">Variable Operations</a></li>
 <li><a href="#variables-in-memory">Variables in Memory</a></li>
-<li><a href="#overflow">Overflow</a></li>
+<li><a href="#overflow">Overflow <span class="emoji" data-emoji="lock">🔒</span></a></li>
 </ul></li>
 <li><a href="#operators">Operators</a>
 <ul>
@@ -1223,7 +1223,7 @@
 </ul>
 </section>
 <section id="overflow" class="level2">
-<h2>Overflow</h2>
+<h2>Overflow <span class="emoji" data-emoji="lock">🔒</span></h2>
 <ul>
 <li><p>Assume a car has a 4-digit odometer, and currently, it shows 9999. What does the odometer show if you drive the car another mile? As you guess, it shows 0000 while it must show 10000. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called <code class="sourceCode cs">overflow</code> error.</p></li>
 <li><p>In an unsigned data type variable with <span class="math inline"><em>N</em></span> bits, we can store the numbers ranged from 0 to <span class="math inline">2<sup>(<em>N</em>−1)</sup></span>. In signed data type variables, the high order bit represents the sign of the number as follows:</p>
@@ -1233,7 +1233,7 @@
 </ul></li>
 <li><p>With the remaining <span class="math inline"><em>N</em> − 1</span> bits, we can represent <span class="math inline">2<sup>(<em>N</em>−1)</sup></span> states. Hence, considering the sign bit, we can store a number from <span class="math inline"> − 2<sup>(<em>N</em>−1)</sup></span> to <span class="math inline">2<sup>(<em>N</em>−1)</sup> − 1</span> in the variable.</p></li>
 <li><p>In many programming languages like C, overflow error raise an exceptional situation that crashes the program if it is not handled. But, in C#, the extra bits are just ignored, and if the programmer does not care about such a possibility, it can lead to a severe security problem.</p></li>
-<li><p>For example, assume a company gives loans to its employee. Couples working for the company can get loans separately, but the total amount can not exceed $10000. The underneath program look like does this job, but there is the risk of attacks.</p></li>
+<li><p>For example, assume a company gives loans to its employee. Couples working for the company can get loans separately, but the total amount can not exceed $10000. The underneath program looks like it does this job, but there is a risk of attacks.</p></li>
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">uint</span> n1<span class="op">,</span> n2<span class="op">;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1247,7 +1247,20 @@
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Pay ${n1} for the first person&quot;</span><span class="op">);</span></span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Pay ${n2} for the second person&quot;</span><span class="op">);</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Error: the sum of loans exceeds the maximum allowance.&quot;</span><span class="op">);</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>If the user enters 2 and 4294967295, we expect to see the error message. However, it is not true. The reason can be explained as follows:
+<ul>
+<li>uint is a 32-bit data type.</li>
+<li>The binary representation of 2 and 4294967295 are 00000000000000000000000000000010 and 11111111111111111111111111111111.</li>
+<li>Therefore, the sum of these numbers should be 100000000000000000000000000000001, which needs 33 bits.</li>
+<li>Nevertheless, there is only 32-bit available for the result, and the extra bits will be dropped, and the result will be 00000000000000000000000000000001, which is less than 10000.</li>
+</ul></li>
+</ul>
 </section>
 </section>
 <section id="operators" class="level1">
