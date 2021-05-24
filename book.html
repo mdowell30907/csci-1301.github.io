@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 24, 2021 (01:36:53 AM)</p>
+<p class="date">May 24, 2021 (02:52:39 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -968,9 +968,10 @@
 <li><code class="sourceCode cs"><span class="dt">string</span></code> literal: text in double quotes, like <code class="sourceCode cs"><span class="st">&quot;hello&quot;</span></code></li>
 <li><code class="sourceCode cs"><span class="dt">char</span></code> literal: a character in single quotes, like <code class="sourceCode cs"><span class="ch">&#39;a&#39;</span></code></li>
 <li><code class="sourceCode cs"><span class="dt">int</span></code> literal: a number without a decimal point, with or without a minus sign (e.g. <code class="sourceCode cs"><span class="dv">52</span></code>)</li>
+<li><code class="sourceCode cs"><span class="dt">long</span></code> literal: just like an <code class="sourceCode cs"><span class="dt">int</span></code> literal but with the suffix <code class="sourceCode cs">l</code> or <code class="sourceCode cs">L</code>, e.g. <code class="sourceCode cs">4L</code></li>
 <li><code class="sourceCode cs"><span class="dt">double</span></code> literal: a number with a decimal point, with or without a minus sign (e.g. <code class="sourceCode cs"><span class="op">-</span><span class="fl">4.5</span></code>)</li>
-<li><code class="sourceCode cs"><span class="dt">float</span></code> literal: just like a <code class="sourceCode cs"><span class="dt">double</span></code> literal but with the suffix <code class="sourceCode cs">f</code> (for “float”), e.g. <code class="sourceCode cs"><span class="fl">4.5f</span></code></li>
-<li><code class="sourceCode cs"><span class="dt">decimal</span></code> literal: just like a <code class="sourceCode cs"><span class="dt">double</span></code> literal but with the suffix <code class="sourceCode cs">m</code> (for “deciMal”), e.g. <code class="sourceCode cs"><span class="fl">6.01m</span></code></li>
+<li><code class="sourceCode cs"><span class="dt">float</span></code> literal: just like a <code class="sourceCode cs"><span class="dt">double</span></code> literal but with the suffix <code class="sourceCode cs">f</code> or <code class="sourceCode cs">F</code> (for “float”), e.g. <code class="sourceCode cs"><span class="fl">4.5f</span></code></li>
+<li><code class="sourceCode cs"><span class="dt">decimal</span></code> literal: just like a <code class="sourceCode cs"><span class="dt">double</span></code> literal but with the suffix <code class="sourceCode cs">m</code> or <code class="sourceCode cs">M</code>(for “deciMal”), e.g. <code class="sourceCode cs"><span class="fl">6.01m</span></code></li>
 </ul></li>
 </ul></li>
 <li>Variables overview
@@ -1010,7 +1011,7 @@
 <li>Declaration
 <ul>
 <li>This is when you specify the <em>name</em> of a variable and its <em>type</em></li>
-<li>Syntax: <code class="sourceCode cs"><span class="op">[</span>type keyword<span class="op">]</span> <span class="op">[</span>variable name<span class="op">];</span></code></li>
+<li>Syntax: <code class="sourceCode cs">type_keyword variable_name<span class="op">;</span></code></li>
 <li>Examples: <code class="sourceCode cs"><span class="dt">int</span> myAge<span class="op">;</span></code>, <code class="sourceCode cs"><span class="dt">string</span> myName<span class="op">;</span></code>, <code class="sourceCode cs"><span class="dt">double</span> winChance<span class="op">;</span></code></li>
 <li>A variable name is an identifier, so it should follow the rules and conventions
 <ul>
@@ -1025,7 +1026,7 @@
 <li>The act of changing the value of a variable</li>
 <li>Uses the symbol <code class="sourceCode cs"><span class="op">=</span></code>, which is the <em>assignment operator</em>, not a statement of equality – it does not mean “equals”</li>
 <li>Direction of assignment is <strong>right to left</strong>: the variable goes on the left side of the <code class="sourceCode cs"><span class="op">=</span></code> symbol, and its new value goes on the right</li>
-<li>Syntax: <code class="sourceCode cs"><span class="op">[</span>variable name<span class="op">]</span> <span class="op">=</span> <span class="op">[</span>value<span class="op">];</span></code></li>
+<li>Syntax: <code class="sourceCode cs">variable_name <span class="op">=</span> value<span class="op">;</span></code></li>
 <li>Example: <code class="sourceCode cs">myAge <span class="op">=</span> <span class="dv">29</span><span class="op">;</span></code></li>
 <li>Value <em>must</em> match the type of the variable. If <code class="sourceCode cs">myAge</code> was declared as an <code class="sourceCode cs"><span class="dt">int</span></code>-type variable, you cannot write <code class="sourceCode cs">myAge <span class="op">=</span> <span class="st">&quot;29&quot;</span><span class="op">;</span></code> because <code class="sourceCode cs"><span class="st">&quot;29&quot;</span></code> is a <code class="sourceCode cs"><span class="dt">string</span></code></li>
 </ul></li>
@@ -1033,7 +1034,7 @@
 <ul>
 <li>Initialization statement combines declaration and assignment in one line (it’s just a shortcut, not a new operation)</li>
 <li>Creates a new variable and also gives it an initial value</li>
-<li>Syntax: <code class="sourceCode cs"><span class="op">[</span>type keyword<span class="op">]</span> <span class="op">[</span>variable name<span class="op">]</span> <span class="op">=</span> <span class="op">[</span>value<span class="op">];</span></code></li>
+<li>Syntax: <code class="sourceCode cs">type variable_name <span class="op">=</span> value<span class="op">;</span></code></li>
 <li>Example: <code class="sourceCode cs"><span class="dt">string</span> myName <span class="op">=</span> <span class="st">&quot;Edward&quot;</span><span class="op">;</span></code></li>
 <li>Can only be used once per variable, since you can only declare a variable once</li>
 </ul></li>
