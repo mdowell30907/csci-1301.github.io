@@ -19,7 +19,7 @@
   <meta property="og:image" content="../../android-chrome-512x512.png" />
   <meta name="author" content="https://csci-1301.github.io/about#authors" />
   <meta name="keywords" content="Computer Science, Problem solving methods, Augusta University, Bachelor of Science, C# Programming language" />
-  <title>Variables Manipulation</title>
+  <title>Type Casting</title>
   <style>
     html {
       line-height: 1.5;
@@ -246,97 +246,135 @@
 <body>
 <main>
 <header id="title-block-header">
-<h1 class="title">Variables Manipulation</h1>
+<h1 class="title">Type Casting</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
 <p class="date">May 24, 2021 (06:20:49 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#reading-the-instructions">Reading the Instructions</a></li>
-<li><a href="#first-variables-manipulation">First Variables Manipulation</a></li>
-<li><a href="#experimenting-with-numeric-datatypes">Experimenting With Numeric Datatypes</a></li>
-<li><a href="#variable-assignments">Variable Assignments</a></li>
+<li><a href="#numerical-datatypes">Numerical Datatypes</a>
+<ul>
+<li><a href="#literals-and-variables">Literals and Variables</a></li>
+<li><a href="#operations">Operations</a></li>
+<li><a href="#cast-operator">Cast Operator</a></li>
+</ul></li>
 </ul>
 </nav>
-<section id="reading-the-instructions" class="level1">
-<h1>Reading the Instructions</h1>
-<p>This is the third lab and you should have formed some habits by now. You should know how to:</p>
-<ol>
-<li>Manipulate projects (creating them, opening them, editing them, saving them, making backups, etc.).</li>
-<li>Compile and execute your program frequently.</li>
-</ol>
-<p>You have probably already started to read “compile and execute” as</p>
-<blockquote>
-<p>In the menu, click on <code class="sourceCode cs">Build</code> → <code class="sourceCode cs">Build solution</code> (or use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>), then on <code class="sourceCode cs">Debug</code> → <code class="sourceCode cs">Start without Debugging</code> (or use <kbd>Ctrl</kbd> + <kbd>F5</kbd>).</p>
-</blockquote>
-<p>From now on, read “Create a new project” as</p>
-<blockquote>
-<p>Create a new project using the “Console Application Visual C#” template, as you did in lab 02. Pick simple and “valid” names for your project and solution, and make sure you save it in the right place, like a folder that includes the lab number. Compile and execute your program frequently, for instance upon completion of every item. <em>Do not hesitate to change your program to answer questions; you’re in a lab, you’re supposed to conduct experiments!</em> If you get an error when trying to compile your program, use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F12</kbd> to “jump” to the line where VS thinks there is an error.</p>
-</blockquote>
-<p>And, <em>even if it is not explicitly asked</em>, you should save your work once you are done, then re-open it at the beginning of the next session to make sure you saved it properly.</p>
-<p>If you want a tutor or your instructor to check your answer to a previous lab, just ask!</p>
-</section>
-<section id="first-variables-manipulation" class="level1">
-<h1>First Variables Manipulation</h1>
-<ol>
-<li><p>Create a new project as indicated above.</p></li>
-<li><p>In the <code class="sourceCode cs">Main</code> method, add three statements:</p>
+<section id="numerical-datatypes" class="level1">
+<h1>Numerical Datatypes</h1>
+<p>For this part, it is recommended to have the datatypes cheatsheet, which is available in the Week 4 module of the lecture notes. Note that it contains numerous references at its end. You are encouraged to open those links, if you have not already, to have a look at the official documentation, which should not scare you.</p>
+<section id="literals-and-variables" class="level2">
+<h2>Literals and Variables</h2>
+<p>This part should be first carried out without using VS.</p>
+<p>Assume we have the following statements:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">21</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> f <span class="op">=</span> <span class="fl">2.5000000f</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> d <span class="op">=</span> <span class="op">-</span><span class="fl">1.3</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> m <span class="op">=</span> <span class="fl">2.5m</span><span class="op">;</span></span></code></pre></div>
+<p>Answer the following:</p>
 <ul>
-<li>One that declares a <code class="sourceCode cs"><span class="dt">string</span></code> variable named <code class="sourceCode cs">lastName</code>.</li>
-<li>One that declares a <code class="sourceCode cs"><span class="dt">string</span></code> variable named <code class="sourceCode cs">firstName</code>.</li>
-<li>One that declares an <code class="sourceCode cs"><span class="dt">int</span></code> variable named <code class="sourceCode cs">classOf</code>.</li>
-</ul></li>
-<li><p>Below those three statements, write statements that assign your last name to the first variable, your first name to the second variable, and your anticipated graduation year (i.e., 2025, for instance) to the third variable.</p></li>
-<li><p>Display at the screen the values of the three variables, using the following statement:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;My name is {firstName} {lastName}, and I expect to graduate in {classOf}.&quot;</span><span class="op">);</span></span></code></pre></div></li>
-<li><p>Compile and execute your program. It should display a message like:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">My</span> name is John Smith, and I expect to graduate in 2025.</span></code></pre></div></li>
-<li><p>Answer the following by first thinking of what may happen, and then by editing your program to check your hypothesis. Would the compilation still be successful if we were to try to:</p>
+<li>How many variables are declared?</li>
+<li>What are their datatypes?</li>
+<li>What are their values?</li>
+<li>What are their names?</li>
+</ul>
+</section>
+<section id="operations" class="level2">
+<h2>Operations</h2>
+<ul>
+<li>Consider the following expressions. For each of them, tell if they are legal and if so, give the result and its corresponding datatype. The first two are given as examples:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Legal?</th>
+<th>Result</th>
+<th>Datatype</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code class="sourceCode cs">a <span class="op">+</span> d</code></td>
+<td>Yes</td>
+<td><span class="math inline">19.7</span></td>
+<td><code class="sourceCode cs"><span class="dt">double</span></code></td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode cs">m <span class="op">+</span> f</code></td>
+<td>No</td>
+<td>_</td>
+<td>_</td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode cs">a <span class="op">/</span> b</code></td>
+<td>_</td>
+<td>_</td>
+<td>_</td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode cs">b <span class="op">*</span> f</code></td>
+<td>_</td>
+<td>_</td>
+<td>_</td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode cs">d <span class="op">+</span> f</code></td>
+<td>_</td>
+<td>_</td>
+<td>_</td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode cs">d <span class="op">+</span> b</code></td>
+<td>_</td>
+<td>_</td>
+<td>_</td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode cs">a <span class="op">+</span> m</code></td>
+<td>_</td>
+<td>_</td>
+<td>_</td>
+</tr>
+<tr class="even">
+<td><code class="sourceCode cs">f <span class="op">/</span> m</code></td>
+<td>_</td>
+<td>_</td>
+<td>_</td>
+</tr>
+<tr class="odd">
+<td><code class="sourceCode cs">d <span class="op">*</span> m</code></td>
+<td>_</td>
+<td>_</td>
+<td>_</td>
+</tr>
+</tbody>
+</table>
+<p>You can check your answers using VS: create a new project, copy the variable declarations and assignments, and write your own statements to perform the calculations in the <code class="sourceCode cs">Main</code> method. For instance, if you want to check that the result of <code class="sourceCode cs">a <span class="op">+</span> d</code> is of type <code class="sourceCode cs"><span class="dt">double</span></code>, write something like:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> tempVariable1 <span class="op">=</span> a <span class="op">+</span> d<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The value of d+f is {tempVariable1}&quot;</span><span class="op">);</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> tempVariable2 <span class="op">=</span> a <span class="op">+</span> d<span class="op">;</span> <span class="co">// This line should give you an error.</span></span></code></pre></div>
+<!-- 
+There has to be a better way!
+https://stackoverflow.com/questions/11634079/how-can-i-get-the-data-type-of-a-variable-in-c
+Check the actual type!
+-->
+</section>
+<section id="cast-operator" class="level2">
+<h2>Cast Operator</h2>
+<p>Create a new project, and then do the following.</p>
 <ol>
-<li>Assign a value to a variable before declaring it?</li>
-<li>Display the content of a variable before assigning a value to it?</li>
-<li>Assign a <code class="sourceCode cs">String</code> value to an <code class="sourceCode cs"><span class="dt">int</span></code> variable?</li>
-<li>Assign an <code class="sourceCode cs"><span class="dt">int</span></code> value to a <code class="sourceCode cs">String</code> variable?</li>
-</ol></li>
-<li><p>At the end of your <code class="sourceCode cs">Main</code> method add three statements that change the values of the three variables and copy the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> statement that was previously given. Notice that the very same statement will now print a different message!</p></li>
+<li><p>Add in your program the following:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> floatVar <span class="op">=</span> <span class="fl">4.3f</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> floatVar<span class="op">;</span> <span class="co">// This statement will give you an error</span></span></code></pre></div>
+<p>You will get an error that reads</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Cannot</span> implicitly convert type <span class="st">&#39;float&#39;</span> to <span class="st">&#39;int&#39;</span>. An explicit conversion exists <span class="er">(</span><span class="ex">are</span> you missing a cast<span class="pp">?</span><span class="kw">)</span></span></code></pre></div>
+<p>Can you explain it?</p></li>
+<li><p>VS is suggesting that we use a “cast” to “force” C# to store the value of the variable <code class="sourceCode cs">floatVar</code> into the variable <code class="sourceCode cs">intVar</code>. To do so, replace the previous statement with the following:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> intVar <span class="op">=</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span>floatVar<span class="op">;</span> <span class="co">// This statement will compile</span></span></code></pre></div></li>
+<li><p>Using a <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> statement, observe the value stored in <code class="sourceCode cs">intVar</code>. Can you tell if the value stored in <code class="sourceCode cs">floatVar</code> was rounded or truncated before being stored in the variable <code class="sourceCode cs">intVar</code>? Conduct further experiments if needed to answer this question.</p></li>
 </ol>
 </section>
-<section id="experimenting-with-numeric-datatypes" class="level1">
-<h1>Experimenting With Numeric Datatypes</h1>
-<p>Compute in your head the result of the following operation: <span class="math inline">1000000.0 + 1.2 − 1000000.0</span>.</p>
-<p>Now, implement it (read “implement it” as: “Create a new project and write in the <code class="sourceCode cs">Main</code> method the code below to display on the screen the result of this computation, as computed by C#”) using the <code class="sourceCode cs"><span class="dt">float</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, and <code class="sourceCode cs"><span class="dt">decimal</span></code> datatypes:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;With floats:</span><span class="sc">\n\t</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="fl">1000000.0f</span> <span class="op">+</span> <span class="fl">1.2f</span> <span class="op">-</span> <span class="fl">1000000.0f</span><span class="op">);</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;With double:</span><span class="sc">\n\t</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="fl">1000000.0</span> <span class="op">+</span> <span class="fl">1.2</span> <span class="op">-</span> <span class="fl">1000000.0</span><span class="op">);</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;With decimal:</span><span class="sc">\n\t</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="fl">1000000.0m</span> <span class="op">+</span> <span class="fl">1.2m</span> <span class="op">-</span> <span class="fl">1000000.0m</span><span class="op">);</span></span></code></pre></div>
-<p>Compile and execute your program. Can you explain what you just observed?</p>
-<p>Now execute the following code:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> decVar <span class="op">=</span> <span class="fl">12344321.4999999991M</span><span class="op">;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> douVar <span class="op">=</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span>decVar<span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> floVar <span class="op">=</span> <span class="op">(</span><span class="dt">float</span><span class="op">)</span>douVar<span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;With decimal: {decVar} </span><span class="sc">\n</span><span class="st">With double: {douVar} </span><span class="sc">\n</span><span class="st">With float: {floVar}&quot;</span><span class="op">);</span></span></code></pre></div>
-<p>Can you explain the gradual loss of precision?</p>
-</section>
-<section id="variable-assignments" class="level1">
-<h1>Variable Assignments</h1>
-<p>For this problem, it is recommended that you think with a pen and a sheet of paper for some time before opening Visual Studio. Consider the following code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource cs numberLines lineAnchors"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>a <span class="op">=</span> <span class="dv">12</span> <span class="op">-</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>a <span class="op">=</span> <span class="dv">10</span> <span class="op">%</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>a <span class="op">=</span> <span class="dv">12</span> <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>a <span class="op">=</span> <span class="dv">9</span> <span class="op">/</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">3</span><span class="op">;</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>a <span class="op">-=</span> <span class="dv">3</span><span class="op">;</span> <span class="co">// This is the same as a = a - 3;</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a>a <span class="op">+=</span> <span class="dv">5</span><span class="op">;</span> <span class="co">// This is the same as a = a + 5;</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>a <span class="op">*=</span><span class="dv">12</span><span class="op">;</span> <span class="co">// This is the same as a = a * 12;</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a>a <span class="op">/=</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// This is the same as a = a / 2;</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a>a <span class="op">=</span> a <span class="op">+</span> a<span class="op">;</span></span></code></pre></div>
-<ol>
-<li>In the previous code, what is the value of <code class="sourceCode cs">a</code> after each line is executed? Refer to Problem 1 in the second homework for guidance on those operations if needed.</li>
-<li>Check your answers: create a new project, copy the previous statements in the <code class="sourceCode cs">Main</code> method, and use <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>a<span class="op">);</span></code> to display the value of <code class="sourceCode cs">a</code> after each statement.</li>
-</ol>
 </section>
 </main>
 <footer id="footer">
