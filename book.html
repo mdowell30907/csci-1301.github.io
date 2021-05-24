@@ -248,7 +248,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 24, 2021 (12:51:36 PM)</p>
+<p class="date">May 24, 2021 (05:41:25 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -321,6 +321,7 @@
 </ul></li>
 <li><a href="#signature-and-overloading">Signature and Overloading</a></li>
 <li><a href="#tostring">ToString</a></li>
+<li><a href="#decisions-and-decision-structures">Decisions and Decision Structures</a></li>
 <li><a href="#boolean-and-conditions">Boolean and Conditions</a></li>
 <li><a href="#equality-and-relational-operators">Equality and Relational Operators</a></li>
 <li><a href="#if-statement">if Statement</a>
@@ -1633,7 +1634,7 @@
 <section id="reading-a-string-from-the-user" class="level2">
 <h2>Reading a String From the User</h2>
 <p>We can ask <em>the user</em> to give their name to the program while it is running as RunTime input. We can use a statement like:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> yourFirstName <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> yourFirstName <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span></code></pre></div>
 <p>to store the value entered by the user from the output window in the string variable labeled <code class="sourceCode cs">yourFirstName</code>.</p>
 </section>
 <section id="reading-an-int-from-the-user" class="level2">
@@ -1642,7 +1643,7 @@
 <h3>Converting a String into an Int</h3>
 <p>In the <code class="sourceCode cs"><span class="dt">int</span></code> class, there is a method called <code class="sourceCode cs">Parse</code> that converts a <code class="sourceCode cs"><span class="dt">string</span></code> into an <code class="sourceCode cs"><span class="dt">int</span></code> if possible and “crashes” otherwise.</p>
 <p>For instance, one can use:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> test <span class="op">=</span> <span class="st">&quot;32&quot;</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb28"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> test <span class="op">=</span> <span class="st">&quot;32&quot;</span><span class="op">;</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> testConversion <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>test<span class="op">);</span></span></code></pre></div>
 <p>This converts <em>the <code class="sourceCode cs"><span class="dt">string</span></code></em> <code class="sourceCode cs"><span class="st">&quot;32&quot;</span></code> into the integer 32 and stores it in the <code class="sourceCode cs">testConversion</code> variable, so that the programmer may now treat it like a number (and perform operations on it).</p>
 <p>Note that if the string does <em>not</em> correspond to a number (e.g. <code class="sourceCode cs"><span class="st">&quot;Hi Mom!&quot;</span></code>), then the program would … explode, as the conversion fails. It would simply stop and display an error message.</p>
@@ -1651,16 +1652,16 @@
 <section id="converting-a-user-input-into-an-int" class="level3">
 <h3>Converting a User input into an int</h3>
 <p>We can simply combine the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">()</span></code> instruction with the <code class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span></code> method to read integers from the user:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter the year.&quot;</span><span class="op">);</span></span>
+<div class="sourceCode" id="cb29"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter the year.&quot;</span><span class="op">);</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> answer <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> currentYear <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>answer<span class="op">);</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Next year we will be in {currentYear + 1}.&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>We could shorten the previous program by “chaining” the methods:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter the year.&quot;</span><span class="op">);</span></span>
+<div class="sourceCode" id="cb30"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter the year.&quot;</span><span class="op">);</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> currentYear <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Next year we will be in {currentYear + 1}.&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>Or even, if every line counts and we don’t need to access the current year later on in the program:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter the year.&quot;</span><span class="op">);</span></span>
+<div class="sourceCode" id="cb31"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter the year.&quot;</span><span class="op">);</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Next year we will be in {int.Parse(Console.ReadLine()) + 1}.&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>But, of course, the more that happens on a single line, the more difficult it is to debug it properly.</p>
 </section>
@@ -1701,13 +1702,13 @@
 <!--
 cf. Fig. 4.13
 -->
-<div class="sourceCode" id="cb32"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>        Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.567:N}&quot;</span> <span class="co">// 1,234.57</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.5:N}&quot;</span>   <span class="co">// 1,234.50</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.567:E}&quot;</span> <span class="co">// 1.234567E+003</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.567:C}&quot;</span> <span class="co">// $1,234.57</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.5:C}&quot;</span>   <span class="co">// $1,234.50</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>            <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{.5:P}&quot;</span>       <span class="co">// 50.00%</span></span>
+<div class="sourceCode" id="cb32"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.567:N}&quot;</span> <span class="co">// 1,234.57</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.5:N}&quot;</span>   <span class="co">// 1,234.50</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.567:E}&quot;</span> <span class="co">// 1.234567E+003</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.567:C}&quot;</span> <span class="co">// $1,234.57</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{1234.5:C}&quot;</span>   <span class="co">// $1,234.50</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span> <span class="op">+</span> $<span class="st">&quot;{.5:P}&quot;</span>       <span class="co">// 50.00%</span></span>
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">);</span></span></code></pre></div>
 </section>
 </section>
@@ -2024,6 +2025,26 @@ cf. Fig. 4.13
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> <span class="st">&quot;Person: &quot;</span> <span class="op">+</span> Name <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> Age<span class="op">;</span></span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section id="decisions-and-decision-structures" class="level1">
+<h1>Decisions and Decision Structures</h1>
+<p>Everybody needs to take decisions all the time. Consider an instructor teaching CSCI 1301 for instance, at the beginning of class they may</p>
+<ul>
+<li>Ask if there are questions. If a student have a question, then the instructor will answer it, and ask again (“Anything else?”).</li>
+<li>When there are no more questions, they may move on to the nexst step, which is to introduce the class (“Today, we will be discussing Decisions and Decision Structures”).</li>
+<li>If there is a quiz scheduled, then they will proceed to distribute it, otherwise they may start the class.</li>
+<li>etc.</li>
+</ul>
+<p>This type of “branching” between multiple choices can be represented with an <a href="https://en.wikipedia.org/wiki/Activity_diagram">activity diagram</a>:</p>
+<figure>
+<img src="img/teaching.svg" alt="“An Activity Diagram on Teaching a Class”" /><figcaption aria-hidden="true">“An Activity Diagram on Teaching a Class”</figcaption>
+</figure>
+<p>In C#, we will represent</p>
+<ul>
+<li>repetitions (or “loops”) (“As long as there are questions…”) with the <code class="sourceCode cs"><span class="kw">while</span></code>, <code class="sourceCode cs">do…while</code> and <code class="sourceCode cs"><span class="kw">for</span></code> keywords,</li>
+<li>branchings (“If there is a quiz…”) with the <code class="sourceCode cs"><span class="kw">if</span></code>, <code class="sourceCode cs">if…else</code> and <code class="sourceCode cs"><span class="kw">switch</span></code> keywords.</li>
+</ul>
+<p>Both structures need a datatype to express the result of a decision (“Is it <em>true</em> that there are questions.”, or “Is it <em>false</em> that there is a quiz.”) called booleans. Those booleans can be obtained using conditions, that can be composed (“If we are a Monday, and if it is not past 10:10 am, and if mid-term is not passed, the class will also include a brief reminder about the upcoming first exam.”) in different ways using three operators (“and”, “or” and “not”).</p>
 </section>
 <section id="boolean-and-conditions" class="level1">
 <h1>Boolean and Conditions</h1>
