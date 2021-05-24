@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 24, 2021 (03:04:21 AM)</p>
+<p class="date">May 24, 2021 (03:08:15 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -1084,10 +1084,11 @@
 <li><code class="sourceCode cs"><span class="dt">int</span></code> uses 4 bytes of memory, can store numbers in the range <span class="math inline">[−2<sup>31</sup>,2<sup>31</sup>−1]</span></li>
 <li><code class="sourceCode cs"><span class="dt">long</span></code> uses 8 bytes of memory can store numbers in the range <span class="math inline">[−2<sup>63</sup>,2<sup>63</sup>−1]</span></li>
 <li><code class="sourceCode cs"><span class="dt">short</span></code> uses 2 bytes of memory, can store numbers in the range <span class="math inline">[−2<sup>15</sup>,2<sup>15</sup>−1]</span></li>
-<li><code class="sourceCode cs"><span class="dt">byte</span></code> uses only 1 bytes of memory, can store numbers in the range <span class="math inline">[0,255]</span>. Note that <code class="sourceCode cs"><span class="dt">byte</span></code> is <em>unsigned</em> by default, and stores only positive numbers.</li>
+<li><code class="sourceCode cs"><span class="dt">sbyte</span></code> uses only 1 bytes of memory, can store numbers in the range <span class="math inline">[−128,127]</span></li>
 </ul></li>
 <li>Unsigned versions of the integer types use the same amount of memory, but can store larger positive numbers
 <ul>
+<li><code class="sourceCode cs"><span class="dt">byte</span></code> uses 1 byte of memory, can store numbers in the range <span class="math inline">[0,255]</span></li>
 <li><code class="sourceCode cs"><span class="dt">ushort</span></code> uses 2 bytes of memory, can store numbers in the range <span class="math inline">[0,2<sup>16</sup>−1]</span></li>
 <li><code class="sourceCode cs"><span class="dt">uint</span></code> uses 4 bytes of memory, can store numbers in the range <span class="math inline">[0,2<sup>32</sup>−1]</span></li>
 <li><code class="sourceCode cs"><span class="dt">ulong</span></code> uses 8 bytes of memory, can store numbers in the range <span class="math inline">[0,2<sup>64</sup>−1]</span></li>
@@ -1135,60 +1136,66 @@
 </thead>
 <tbody>
 <tr class="odd">
+<td><code class="sourceCode cs"><span class="dt">sbyte</span></code></td>
+<td>1 bytes</td>
+<td><span class="math inline"> − 128...127</span></td>
+<td>N/A</td>
+</tr>
+<tr class="even">
 <td><code class="sourceCode cs"><span class="dt">byte</span></code></td>
 <td>1 bytes</td>
 <td><span class="math inline">0...255</span></td>
 <td>N/A</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code class="sourceCode cs"><span class="dt">short</span></code></td>
 <td>2 bytes</td>
 <td><span class="math inline"> − 2<sup>15</sup>...2<sup>15</sup> − 1</span></td>
 <td>N/A</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code class="sourceCode cs"><span class="dt">ushort</span></code></td>
 <td>2 bytes</td>
 <td><span class="math inline">0...2<sup>16</sup> − 1</span></td>
 <td>N/A</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code class="sourceCode cs"><span class="dt">int</span></code></td>
 <td>4 bytes</td>
 <td><span class="math inline"> − 2<sup>31</sup>...2<sup>31</sup> − 1</span></td>
 <td>N/A</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code class="sourceCode cs"><span class="dt">uint</span></code></td>
 <td>4 bytes</td>
 <td><span class="math inline">0...2<sup>32</sup> − 1</span></td>
 <td>N/A</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code class="sourceCode cs"><span class="dt">long</span></code></td>
 <td>8 bytes</td>
 <td><span class="math inline"> − 2<sup>63</sup>...2<sup>63</sup> − 1</span></td>
 <td>N/A</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code class="sourceCode cs"><span class="dt">ulong</span></code></td>
 <td>8 bytes</td>
 <td><span class="math inline">0...2<sup>64</sup> − 1</span></td>
 <td>N/A</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code class="sourceCode cs"><span class="dt">float</span></code></td>
 <td>4 bytes</td>
 <td><span class="math inline"> ± 1.5 ⋅ 10<sup> − 45</sup>... ± 3.4 ⋅ 10<sup>38</sup></span></td>
 <td>7 digits</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code class="sourceCode cs"><span class="dt">double</span></code></td>
 <td>8 bytes</td>
 <td><span class="math inline"> ± 5.0 ⋅ 10<sup> − 324</sup>... ± 1.7 ⋅ 10<sup>308</sup></span></td>
 <td>15-16 digits</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code class="sourceCode cs"><span class="dt">decimal</span></code></td>
 <td>16 bytes</td>
 <td><span class="math inline"> ± 1.0 ⋅ 10<sup> − 28</sup>... ± 7.9 ⋅ 10<sup>28</sup></span></td>
