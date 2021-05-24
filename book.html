@@ -247,7 +247,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 24, 2021 (02:52:39 AM)</p>
+<p class="date">May 24, 2021 (03:04:21 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -1056,16 +1056,13 @@
 </ul></li>
 <li>Displaying
 <ul>
-<li><code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> can only print text – the argument (that goes in parentheses) needs to be a <code class="sourceCode cs"><span class="dt">string</span></code></li>
-<li>To print a variable that is not <code class="sourceCode cs"><span class="dt">string</span></code>-type, we must convert it to a <code class="sourceCode cs"><span class="dt">string</span></code></li>
-<li><strong>String interpolation</strong>: a mechanism for converting a variable’s value to a <code class="sourceCode cs"><span class="dt">string</span></code> and inserting it into another string
+<li>When you want to print a mixture of values and variables with <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code>, we should convert all of them to a string</li>
+<li><strong>String interpolation</strong>: a mechanism for converting a variable’s value to a <code class="sourceCode cs"><span class="dt">string</span></code> and inserting it into the main string
 <ul>
-<li>Syntax: <code class="sourceCode cs">$<span class="st">&quot;text {variable}&quot;</span></code> – begin with a <code class="sourceCode cs">$</code> symbol, then put variable’s name inside brackets within the string</li>
+<li>Syntax: <code class="sourceCode cs">$<span class="st">&quot;text {variable} text&quot;</span></code> – begin with a <code class="sourceCode cs">$</code> symbol, then put variable’s name inside brackets within the string</li>
 <li>Example: <code class="sourceCode cs">$<span class="st">&quot;I am {myAge} years old&quot;</span></code></li>
 <li>When this line of code is executed, it reads the variable’s current value, converts it to a string (<code class="sourceCode cs"><span class="dv">29</span></code> becomes <code class="sourceCode cs"><span class="st">&quot;29&quot;</span></code>), and inserts it into the surrounding string</li>
 </ul></li>
-<li>If the argument to <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> is the name of a variable, it will automatically convert that variable to a <code class="sourceCode cs"><span class="dt">string</span></code> before displaying it</li>
-<li>For example, <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>myAge<span class="op">);</span></code> will display “29” in the console, as if we had written <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;{myAge}&quot;</span><span class="op">);</span></code></li>
 <li>When string interpolation converts a variable to a string, it must call a “string conversion” method supplied with the data type (<code class="sourceCode cs"><span class="dt">int</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you’ll need to write your own string conversions – string interpolation won’t magically “know” how to convert <code class="sourceCode cs">MyClass</code> variables to <code class="sourceCode cs"><span class="dt">string</span></code>s</li>
 </ul></li>
 </ul>
