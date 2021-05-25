@@ -248,36 +248,45 @@
 <header id="title-block-header">
 <h1 class="title">Variables Manipulation</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 24, 2021 (09:23:50 PM)</p>
+<p class="date">May 25, 2021 (12:41:53 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#reading-the-instructions">Reading the Instructions</a></li>
+<li><a href="#variables-manipulation">Variables Manipulation</a>
+<ul>
+<li><a href="#developing-good-lab-habits">Developing good lab habits</a></li>
 <li><a href="#first-variables-manipulation">First Variables Manipulation</a></li>
 <li><a href="#experimenting-with-numeric-datatypes">Experimenting With Numeric Datatypes</a></li>
 <li><a href="#variable-assignments">Variable Assignments</a></li>
+</ul></li>
 </ul>
 </nav>
-<section id="reading-the-instructions" class="level1">
-<h1>Reading the Instructions</h1>
-<p>This is the third lab and you should have formed some habits by now. You should know how to:</p>
+<p>In this lab you will declare and initialize variables and learn about arithmetic operators.</p>
+<section id="variables-manipulation" class="level1">
+<h1>Variables Manipulation</h1>
+<section id="developing-good-lab-habits" class="level2">
+<h2>Developing good lab habits</h2>
+<p>Working through these labs you should have formed some habits. You should know how to:</p>
 <ol>
 <li>Manipulate projects (creating them, opening them, editing them, saving them, making backups, etc.).</li>
 <li>Compile and execute your program frequently.</li>
 </ol>
-<p>You have probably already started to read “compile and execute” as</p>
-<blockquote>
-<p>In the menu, click on <code class="sourceCode cs">Build</code> → <code class="sourceCode cs">Build solution</code> (or use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>), then on <code class="sourceCode cs">Debug</code> → <code class="sourceCode cs">Start without Debugging</code> (or use <kbd>Ctrl</kbd> + <kbd>F5</kbd>).</p>
-</blockquote>
+<p>You have probably already started to read “compile and execute” as:</p>
+<p>Windows/Linux - Compile (build solution): <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> - Execute: <kbd>Ctrl</kbd> + <kbd>F5</kbd></p>
+<p>MacOS - Compile (build solution): <kbd>Command</kbd> + <kbd>B</kbd> - Execute: <kbd>F5</kbd></p>
 <p>From now on, read “Create a new project” as</p>
-<blockquote>
-<p>Create a new project using the “Console Application Visual C#” template, as you did in lab 02. Pick simple and “valid” names for your project and solution, and make sure you save it in the right place, like a folder that includes the lab number. Compile and execute your program frequently, for instance upon completion of every item. <em>Do not hesitate to change your program to answer questions; you’re in a lab, you’re supposed to conduct experiments!</em> If you get an error when trying to compile your program, use <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F12</kbd> to “jump” to the line where VS thinks there is an error.</p>
-</blockquote>
+<ul>
+<li>Create a new project using the “Console Application” template for C#.</li>
+<li>Pick simple and valid names for your project and solution, and make sure you save it in the right place, like a folder that matches the lab name.</li>
+<li>Compile and execute your program frequently, for instance upon completion of every lab task.</li>
+<li><em>Do not hesitate to change your program to answer questions; you’re in a lab, you’re supposed to conduct experiments!</em></li>
+<li>If you get an error when trying to compile your program, go to the line where your IDE thinks there is an error.</li>
+</ul>
 <p>And, <em>even if it is not explicitly asked</em>, you should save your work once you are done, then re-open it at the beginning of the next session to make sure you saved it properly.</p>
 <p>If you want a tutor or your instructor to check your answer to a previous lab, just ask!</p>
 </section>
-<section id="first-variables-manipulation" class="level1">
-<h1>First Variables Manipulation</h1>
+<section id="first-variables-manipulation" class="level2">
+<h2>First Variables Manipulation</h2>
 <ol>
 <li><p>Create a new project as indicated above.</p></li>
 <li><p>In the <code class="sourceCode cs">Main</code> method, add three statements:</p>
@@ -288,24 +297,30 @@
 </ul></li>
 <li><p>Below those three statements, write statements that assign your last name to the first variable, your first name to the second variable, and your anticipated graduation year (i.e., 2025, for instance) to the third variable.</p></li>
 <li><p>Display at the screen the values of the three variables, using the following statement:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;My name is {firstName} {lastName}, and I expect to graduate in {classOf}.&quot;</span><span class="op">);</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;My name is {firstName} {lastName}, and I expect to graduate in {classOf}.&quot;</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>Compile and execute your program. It should display a message like:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">My</span> name is John Smith, and I expect to graduate in 2025.</span></code></pre></div></li>
+<pre class="text"><code>My name is John Smith, and I expect to graduate in 2025.</code></pre></li>
 <li><p>Answer the following by first thinking of what may happen, and then by editing your program to check your hypothesis. Would the compilation still be successful if we were to try to:</p>
 <ol>
 <li>Assign a value to a variable before declaring it?</li>
 <li>Display the content of a variable before assigning a value to it?</li>
-<li>Assign a <code class="sourceCode cs">String</code> value to an <code class="sourceCode cs"><span class="dt">int</span></code> variable?</li>
-<li>Assign an <code class="sourceCode cs"><span class="dt">int</span></code> value to a <code class="sourceCode cs">String</code> variable?</li>
+<li>Assign a <code class="sourceCode cs"><span class="dt">string</span></code> value to an <code class="sourceCode cs"><span class="dt">int</span></code> variable?</li>
+<li>Assign an <code class="sourceCode cs"><span class="dt">int</span></code> value to a <code class="sourceCode cs"><span class="dt">string</span></code> variable?</li>
 </ol></li>
-<li><p>At the end of your <code class="sourceCode cs">Main</code> method add three statements that change the values of the three variables and copy the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> statement that was previously given. Notice that the very same statement will now print a different message!</p></li>
+<li><p>At the end of your <code class="sourceCode cs">Main</code> method:</p>
+<ol>
+<li>add three statements that change the values of the three variables</li>
+<li>Copy the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> statement that was previously given.</li>
+<li>Compile and run the program</li>
+</ol>
+<p>Notice that the very same statement will now print a different message!</p></li>
 </ol>
 </section>
-<section id="experimenting-with-numeric-datatypes" class="level1">
-<h1>Experimenting With Numeric Datatypes</h1>
-<p>Compute in your head the result of the following operation: <span class="math inline">1000000.0 + 1.2 − 1000000.0</span>.</p>
+<section id="experimenting-with-numeric-datatypes" class="level2">
+<h2>Experimenting With Numeric Datatypes</h2>
+<p>Compute in your head the result of the following operation: <code class="sourceCode cs"><span class="fl">1000000.0</span> <span class="op">+</span> <span class="fl">1.2</span> <span class="op">-</span> <span class="fl">1000000.0</span></code>.</p>
 <p>Now, implement it (read “implement it” as: “Create a new project and write in the <code class="sourceCode cs">Main</code> method the code below to display on the screen the result of this computation, as computed by C#”) using the <code class="sourceCode cs"><span class="dt">float</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, and <code class="sourceCode cs"><span class="dt">decimal</span></code> datatypes:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;With floats:</span><span class="sc">\n\t</span><span class="st">&quot;</span><span class="op">);</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;With floats:</span><span class="sc">\n\t</span><span class="st">&quot;</span><span class="op">);</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="fl">1000000.0f</span> <span class="op">+</span> <span class="fl">1.2f</span> <span class="op">-</span> <span class="fl">1000000.0f</span><span class="op">);</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;With double:</span><span class="sc">\n\t</span><span class="st">&quot;</span><span class="op">);</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="fl">1000000.0</span> <span class="op">+</span> <span class="fl">1.2</span> <span class="op">-</span> <span class="fl">1000000.0</span><span class="op">);</span></span>
@@ -313,30 +328,31 @@
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="fl">1000000.0m</span> <span class="op">+</span> <span class="fl">1.2m</span> <span class="op">-</span> <span class="fl">1000000.0m</span><span class="op">);</span></span></code></pre></div>
 <p>Compile and execute your program. Can you explain what you just observed?</p>
 <p>Now execute the following code:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cs"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> decVar <span class="op">=</span> <span class="fl">12344321.4999999991M</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> decVar <span class="op">=</span> <span class="fl">12344321.4999999991M</span><span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> douVar <span class="op">=</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span>decVar<span class="op">;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> floVar <span class="op">=</span> <span class="op">(</span><span class="dt">float</span><span class="op">)</span>douVar<span class="op">;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;With decimal: {decVar} </span><span class="sc">\n</span><span class="st">With double: {douVar} </span><span class="sc">\n</span><span class="st">With float: {floVar}&quot;</span><span class="op">);</span></span></code></pre></div>
 <p>Can you explain the gradual loss of precision?</p>
 </section>
-<section id="variable-assignments" class="level1">
-<h1>Variable Assignments</h1>
-<p>For this problem, it is recommended that you think with a pen and a sheet of paper for some time before opening Visual Studio. Consider the following code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource cs numberLines lineAnchors"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>a <span class="op">=</span> <span class="dv">12</span> <span class="op">-</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>a <span class="op">=</span> <span class="dv">10</span> <span class="op">%</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>a <span class="op">=</span> <span class="dv">12</span> <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>a <span class="op">=</span> <span class="dv">9</span> <span class="op">/</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">3</span><span class="op">;</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>a <span class="op">-=</span> <span class="dv">3</span><span class="op">;</span> <span class="co">// This is the same as a = a - 3;</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a>a <span class="op">+=</span> <span class="dv">5</span><span class="op">;</span> <span class="co">// This is the same as a = a + 5;</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>a <span class="op">*=</span><span class="dv">12</span><span class="op">;</span> <span class="co">// This is the same as a = a * 12;</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a>a <span class="op">/=</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// This is the same as a = a / 2;</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a>a <span class="op">=</span> a <span class="op">+</span> a<span class="op">;</span></span></code></pre></div>
+<section id="variable-assignments" class="level2">
+<h2>Variable Assignments</h2>
+<p>For this problem, it is recommended that you think with a pen and a sheet of paper for some time before opening your IDE. Consider the following code:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">12</span> <span class="op">-</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span> <span class="op">%</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">12</span> <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">9</span> <span class="op">/</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">3</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">-=</span> <span class="dv">3</span><span class="op">;</span> <span class="co">// This is the same as a = a - 3;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>a <span class="op">+=</span> <span class="dv">5</span><span class="op">;</span> <span class="co">// This is the same as a = a + 5;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>a <span class="op">*=</span><span class="dv">12</span><span class="op">;</span> <span class="co">// This is the same as a = a * 12;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>a <span class="op">/=</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// This is the same as a = a / 2;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> a <span class="op">+</span> a<span class="op">;</span></span></code></pre></div>
 <ol>
-<li>In the previous code, what is the value of <code class="sourceCode cs">a</code> after each line is executed? Refer to Problem 1 in the second homework for guidance on those operations if needed.</li>
+<li>In the previous code, what is the value of <code class="sourceCode cs">a</code> after each line is executed?</li>
 <li>Check your answers: create a new project, copy the previous statements in the <code class="sourceCode cs">Main</code> method, and use <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>a<span class="op">);</span></code> to display the value of <code class="sourceCode cs">a</code> after each statement.</li>
 </ol>
+</section>
 </section>
 </main>
 <footer id="footer">
