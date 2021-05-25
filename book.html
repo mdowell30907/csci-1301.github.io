@@ -248,7 +248,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 25, 2021 (04:07:19 PM)</p>
+<p class="date">May 25, 2021 (04:07:49 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -2986,13 +2986,13 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 </section>
 <section id="iterations" class="level2">
 <h2>Iterations</h2>
-<p>There is another, close, structrure that allows to iterate over the elements of an array, but can only access them, not change their values (they are “read only”).</p>
+<p>There is another, close, structure that allows to iterate over the elements of an array, but can only access them, not change their values (they are “read only”).</p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode numberSource cs numberLines lineAnchors"><code class="sourceCode cs"><span id="cb102-1"><a href="#cb102-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
 <span id="cb102-2"><a href="#cb102-2"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
 <span id="cb102-3"><a href="#cb102-3"></a></span>
 <span id="cb102-4"><a href="#cb102-4"></a><span class="kw">foreach</span> <span class="op">(</span><span class="dt">int</span> i <span class="kw">in</span> myArray<span class="op">)</span> <span class="co">// &quot;Read only&quot;</span></span>
 <span id="cb102-5"><a href="#cb102-5"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>i <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span></code></pre></div>
-<p>Diffference is w.r.t. to modifying the array “read Vs write”. Having <code class="sourceCode cs">i <span class="op">=</span> <span class="dv">2</span></code> in the <code class="sourceCode cs"><span class="kw">foreach</span></code> would cause an error!</p>
+<p>Difference is w.r.t (with respect to) modifying the array “read vs write”. Having <code class="sourceCode cs">i <span class="op">=</span> <span class="dv">2</span></code> in the <code class="sourceCode cs"><span class="kw">foreach</span></code> would cause an error!</p>
 <p>That last structure is given for the sake of completeness, but it’s ok if you’d rather not use it.</p>
 </section>
 </section>
