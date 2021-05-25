@@ -223,14 +223,6 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="../../style.css" />
-<header class="page-header">
-    <div>
-        <!-- ../../ does not work here -->
-        <a class="home" href='/'>CSCI 1301</a>
-        <a href='/#book'>Book</a>
-        <a href='/#labs'>Labs</a>
-    </div>
-</header>
 <script>
 // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
 //
@@ -245,10 +237,18 @@
 </head>
 <body>
 <main>
+<header class="page-header">
+    <div>
+        <!-- ../../ does not work here -->
+        <a class="home" href='.../..//'>CSCI 1301</a>
+        <a href='/#book'>Book</a>
+        <a href='/#labs'>Labs</a>
+    </div>
+</header>
 <header id="title-block-header">
 <h1 class="title">User Input</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 25, 2021 (04:47:54 AM)</p>
+<p class="date">May 25, 2021 (05:40:55 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -258,11 +258,15 @@
 <section id="reading-from-the-user" class="level1">
 <h1>Reading From the User</h1>
 <ol>
-<li><p>Download the PersonalizedWelcomeMessage project from the D2L module for this lab.</p></li>
-<li><p>Extract it and open it in VS.</p></li>
-<li><p>(If you are using VS on Mac, follow the instructions at <a href="https://stackoverflow.com/a/49056993/" class="uri">https://stackoverflow.com/a/49056993/</a> to have your project “Run on external console”. You will need to do that for every solution where the user is supposed to enter values.)</p></li>
+<li><p>Download the <a href="PersonalizedWelcomeMessage_Solution.zip">PersonalizedWelcomeMessage project</a>, extract and open it as usual.</p></li>
+<li><p>If you are using Visual Studio on Mac or Monodevelop, you may have to perform an additional step for this program to run as expected.</p>
+<ul>
+<li>For Visual Studio on Mac, follow the instructions at <a href="https://stackoverflow.com/a/49056993/" class="uri">https://stackoverflow.com/a/49056993/</a> to have your project “Run on external console”.</li>
+<li>For Monodevelop, follow the instructions at <a href="https://stackoverflow.com/a/67185469/" class="uri">https://stackoverflow.com/a/67185469/</a> to similarly have your projeect “Run on external console”.</li>
+</ul>
+<p>You may have to perform this operation for every solution where the user is supposed to enter values.</p></li>
 <li><p>Compile and execute it.</p></li>
-<li><p>You will be prompted with the message:</p>
+<li><p>The user of your program (in this case, you!) will be prompted with the message:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> Please<span class="op">,</span> enter your first name<span class="op">,</span> followed by <span class="st">&quot;Enter&quot;</span><span class="op">:</span></span></code></pre></div>
 <p>Enter your first name, followed by <kbd>Enter ↵</kbd>. You just witnessed an interaction between a program and the user!</p></li>
 <li><p>Read the source code carefully and make sure you understand all of it.</p></li>
