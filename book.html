@@ -248,7 +248,7 @@
 <header id="title-block-header">
 <h1 class="title">CSCI 1301 Book</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 25, 2021 (04:25:37 PM)</p>
+<p class="date">May 25, 2021 (05:52:05 PM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -278,8 +278,8 @@
 <li><a href="#literals-and-variables">Literals and Variables</a></li>
 <li><a href="#variable-operations">Variable Operations</a></li>
 <li><a href="#variables-in-memory">Variables in Memory</a></li>
-<li><a href="#overflow">Overflow <span class="emoji" data-emoji="lock">🔒</span></a></li>
-<li><a href="#underflow">Underflow <span class="emoji" data-emoji="lock">🔒</span></a></li>
+<li><a href="#overflow">Overflow 🛡️</a></li>
+<li><a href="#underflow">Underflow 🛡️</a></li>
 </ul></li>
 <li><a href="#operators">Operators</a>
 <ul>
@@ -1234,7 +1234,7 @@
 </ul>
 </section>
 <section id="overflow" class="level2">
-<h2>Overflow <span class="emoji" data-emoji="lock">🔒</span></h2>
+<h2>Overflow 🛡️</h2>
 <ul>
 <li><p>Assume a car has a 4-digit odometer, and currently, it shows <code class="sourceCode cs"><span class="dv">9999</span></code>. What does the odometer show if you drive the car another mile? As you guess, it shows <code class="sourceCode cs"><span class="dv">0000</span></code> while it should show <code class="sourceCode cs"><span class="dv">10000</span></code>. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called <code class="sourceCode cs">overflow</code> error.</p></li>
 <li><p>In an unsigned data type variable with <span class="math inline"><em>N</em></span> bits, we can store the numbers ranged from 0 to <span class="math inline">2<sup>(<em>N</em>−1)</sup></span>. In signed data type variables, the high order bit represents the sign of the number as follows:</p>
@@ -1280,7 +1280,7 @@
 </ul>
 </section>
 <section id="underflow" class="level2">
-<h2>Underflow <span class="emoji" data-emoji="lock">🔒</span></h2>
+<h2>Underflow 🛡️</h2>
 <ul>
 <li>Sometimes, the result of arithmetic operations over floating-point numbers is smaller than what can be stored in the corresponding data type. This problem is known as the underflow problem.</li>
 <li>In C#, in case of an underflow problem, the result will be zero.</li>
