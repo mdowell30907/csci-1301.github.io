@@ -248,7 +248,7 @@
 <header id="title-block-header">
 <h1 class="title">Variables Manipulation</h1>
 <p class="author"><a href="https://csci-1301.github.io/about#authors" class="uri">https://csci-1301.github.io/about#authors</a></p>
-<p class="date">May 25, 2021 (04:05:29 AM)</p>
+<p class="date">May 25, 2021 (04:47:54 AM)</p>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -261,7 +261,7 @@
 </ul></li>
 </ul>
 </nav>
-<p>In this lab you will declare and initialize variables and learn about arithmetic operators.</p>
+<p>In this lab you will declare and initialize variables, and learn about arithmetic operators.</p>
 <section id="variables-manipulation" class="level1">
 <h1>Variables Manipulation</h1>
 <section id="developing-good-lab-habits" class="level2">
@@ -272,8 +272,16 @@
 <li>Compile and execute your program frequently.</li>
 </ol>
 <p>You have probably already started to read “compile and execute” as:</p>
-<p>Windows/Linux - Compile (build solution): <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> - Execute: <kbd>Ctrl</kbd> + <kbd>F5</kbd></p>
-<p>MacOS - Compile (build solution): <kbd>Command</kbd> + <kbd>B</kbd> - Execute: <kbd>F5</kbd></p>
+<p>Windows/Linux</p>
+<ul>
+<li>Compile (build solution): <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></li>
+<li>Execute: <kbd>Ctrl</kbd> + <kbd>F5</kbd></li>
+</ul>
+<p>MacOS</p>
+<ul>
+<li>Compile (build solution): <kbd>Command</kbd> + <kbd>B</kbd></li>
+<li>Execute: <kbd>F5</kbd></li>
+</ul>
 <p>From now on, read “Create a new project” as</p>
 <ul>
 <li>Create a new project using the “Console Application” template for C#.</li>
@@ -299,7 +307,7 @@
 <li><p>Display at the screen the values of the three variables, using the following statement:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;My name is {firstName} {lastName}, and I expect to graduate in {classOf}.&quot;</span><span class="op">);</span></span></code></pre></div></li>
 <li><p>Compile and execute your program. It should display a message like:</p>
-<pre class="text"><code>My name is John Smith, and I expect to graduate in 2025.</code></pre></li>
+<pre class="text"><code>My name is Evi Nemeth, and I expect to graduate in 2025.</code></pre></li>
 <li><p>Answer the following by first thinking of what may happen, and then by editing your program to check your hypothesis. Would the compilation still be successful if we were to try to:</p>
 <ol>
 <li>Assign a value to a variable before declaring it?</li>
@@ -309,17 +317,21 @@
 </ol></li>
 <li><p>At the end of your <code class="sourceCode cs">Main</code> method:</p>
 <ol>
-<li>add three statements that change the values of the three variables</li>
-<li>Copy the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> statement that was previously given.</li>
-<li>Compile and run the program</li>
+<li>Add three statements that change the values of the three variables,</li>
+<li>Copy the <code class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code> statement that was previously given,</li>
+<li>Compile and run the program.</li>
 </ol>
-<p>Notice that the very same statement will now print a different message!</p></li>
+<p>Notice that the very same statement will now display at the screen a different message!</p></li>
 </ol>
 </section>
 <section id="experimenting-with-numeric-datatypes" class="level2">
 <h2>Experimenting With Numeric Datatypes</h2>
 <p>Compute in your head the result of the following operation: <code class="sourceCode cs"><span class="fl">1000000.0</span> <span class="op">+</span> <span class="fl">1.2</span> <span class="op">-</span> <span class="fl">1000000.0</span></code>.</p>
-<p>Now, implement it (read “implement it” as: “Create a new project and write in the <code class="sourceCode cs">Main</code> method the code below to display on the screen the result of this computation, as computed by C#”) using the <code class="sourceCode cs"><span class="dt">float</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, and <code class="sourceCode cs"><span class="dt">decimal</span></code> datatypes:</p>
+<p>Now, implement it (read “implement it” as:</p>
+<blockquote>
+<p>Create a new project and write in the <code class="sourceCode cs">Main</code> method the code below to display on the screen the result of this computation, as computed by C#</p>
+</blockquote>
+<p>) using the <code class="sourceCode cs"><span class="dt">float</span></code>, <code class="sourceCode cs"><span class="dt">double</span></code>, and <code class="sourceCode cs"><span class="dt">decimal</span></code> datatypes:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;With floats:</span><span class="sc">\n\t</span><span class="st">&quot;</span><span class="op">);</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="fl">1000000.0f</span> <span class="op">+</span> <span class="fl">1.2f</span> <span class="op">-</span> <span class="fl">1000000.0f</span><span class="op">);</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;With double:</span><span class="sc">\n\t</span><span class="st">&quot;</span><span class="op">);</span></span>
@@ -370,7 +382,7 @@
     <div class="links">
                     <a href="index.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
             <a href="index.odt" title="Download this ressource in odt.">↓ odt</a>
-                            <a href="https://github.com/csci-1301/csci-1301.github.io" title="Access the source code of this website.">Source Code</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/tree/main/labs/Variables/readme.md" title="Access the source code of this ressource.">Source code</a>
                 <a href="../../about.html" title="Learn more about this website.">About</a>
         </div> 
 </footer>
